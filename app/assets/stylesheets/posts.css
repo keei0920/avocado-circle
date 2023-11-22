@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  font-family: "M PLUS Rounded 1c";
+}
+
+/* サイドバー */
+.side {
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 2px solid #EDF0F3;
+}
+
+.side-header{
+background-color: #ffffff;
+  display: flex;
+  padding-left: 20px;
+}
+
+.app-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Kaisei Decol', serif;
+}
+
+.side-tab {
+}
+
+.menu-title {
+  margin-bottom : 30px;
+  font-size: 30px;
+  font-weight: 1000;
+}
+.menu-lists {
+  list-style: none;
+  padding-left: 90px;
+}
+
+.menu-list {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* メイン */
+.main {
+  width: calc(100vw - 300px); 
+  background-color: #fbfbfb;
+}
+
+.main-header {
+  height: 53px;
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+}
+
+.left-tab {
+  width: 50%;
+  border-right: 2px solid #EDF0F3;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.right-tab {
+  width: 50%;
+  text-align: center;
+}
+
