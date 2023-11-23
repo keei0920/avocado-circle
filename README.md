@@ -105,3 +105,14 @@
 
 - belongs_to :user
 - belongs_to :answer
+
+## likes テーブル
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | -----------------------------  |
+| post                  | string     | null: false, foreign_key: true |
+| user                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :answer
