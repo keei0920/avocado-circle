@@ -7,7 +7,17 @@
 
   <div class="side-tab">
     <ul class="menu-lists">
-      <li class="menu-list"><%= image_tag 'mypage.png', size: '20x20' %> マイページ</li>
+
+      <% if user_signed_in? %>
+      <li class="menu-list"><%= image_tag 'mypage.png', size: '20x20' %>
+      <%= link_to "マイページ", root_path %></li>
+      <% else %>
+      <li class="menu-list", id="login-btn">
+      <%= link_to "ログイン", new_user_session_path, class: "login-registrasion" %></li>
+      <li class="menu-list">
+      <%= link_to "新規登録", new_user_registration_path, class: "login-registrasion"%></li>
+      <% end %>
+
       <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
       <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
       <li class="menu-list"><%= image_tag 'answer.png', size: '20x20' %> 質問をみる</li>

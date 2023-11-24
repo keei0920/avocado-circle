@@ -1,26 +1,39 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="wrapper">
+  <div class="side">
+      <%= render "/posts/side" %>
   </div>
+  
+  <div class="join-wrapper">
+  <h2 class ="title">今日も来てくれてありがとう！</h2>
+    <div class="registration-wrapper">
+      <h2>ログイン</h2>
+      
+      <div class="registration-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <div class="form-content">
+            <p class="field-title">メールアドレス</p>
+            <div class="field"> 
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+          </div>
+          
+          <div class="form-content">
+            <p class="field-title">パスワード</p>
+            <div class="field">
+            <%= f.password_field :password, placeholder:"半角英数6文字以上", autocomplete: "new-password" %>
+            </div>
+          </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="actions">
+              <%= f.submit "ログイン" %>
+            </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="login">
+      <%= link_to "新規登録はこちら", new_user_registration_path, class: "login-btn" %>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

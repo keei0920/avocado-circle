@@ -22,15 +22,14 @@
           <div class="form-content">
             <p class="field-title">都道府県</p>
             <div class="field"> 
-            <%= f.text_field :nickname %>
+            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
             </div>
           </div>
 
           <div class="form-content">
-            <p class="field-title">育てる目的
-            </p>
+            <p class="field-title">育てる目的</p>
             <div class="field"> 
-            <%= f.text_field :nickname %>
+            <%= f.collection_select(:purpose_id, Purpose.all, :id, :name, {}, {class:"select-box"}) %>
             </div>
           </div>
 
@@ -49,7 +48,7 @@
           </div>
 
           <div class="form-content">
-            <p class="field-title">パスワードの確認 </p>
+            <p class="field-title">パスワード(確認)</p>
             <div class="field">
               <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             </div>
@@ -61,6 +60,8 @@
         <% end %>
       </div>
     </div>
-      <%= render "devise/shared/links" %>
+    <div class="login">
+      <%= link_to "ログインはこちら", new_user_session_path, class: "login-btn" %>
+    </div>
   </div>
 </div>
