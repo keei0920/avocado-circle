@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+}
+
+.join-wrapper {
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.registration-wrapper {
+  border: 2px solid #EDF0F3;
+  padding: 40px;
+  width: 500px;
+  background-color: #fbfbfb;
+}
+
+.form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field {
+}
+
+.attentions {
+  text-align: right;
+  font-size: 15px;
+}
+
+.actions {
+  margin-top: 30px;
+  text-align: center;
+}

@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="side">
+      <%= render "/posts/side" %>
+  </div>
+  
+  <div class="join-wrapper">
+  <h2 class ="title">アボカドサークルへようこそ</h2>
+    <div class="registration-wrapper">
+      <h2>新規登録(無料)</h2>
+      
+      <div class="registration-form">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+          
+          <div class="form-content">
+            <p class="field-title">ユーザーネーム</p>
+            <div class="field"> 
+            <%= f.text_field :nickname %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">都道府県</p>
+            <div class="field"> 
+            <%= f.text_field :nickname %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">育てる目的
+            </p>
+            <div class="field"> 
+            <%= f.text_field :nickname %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">メールアドレス</p>
+            <div class="field"> 
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+          </div>
+          
+          <div class="form-content">
+            <p class="field-title">パスワード</p>
+            <div class="field">
+            <%= f.password_field :password, placeholder:"半角英数6文字以上", autocomplete: "new-password" %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">パスワードの確認 </p>
+            <div class="field">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+          </div>
+
+            <div class="actions">
+              <%= f.submit "登録する" %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+      <%= render "devise/shared/links" %>
+  </div>
+</div>
