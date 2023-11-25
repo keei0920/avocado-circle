@@ -40,6 +40,22 @@
   margin-top: 15px;
 }
 
-.login-btn {
-  color: black;
+input[type="text"] {
+  width: 200px;
+  height: 20px;
+}
+
+.select-box {
+  width:  150px;
+  height: 30px;
+}
+
+input[type="email"] {
+  width: 200px;
+  height: 20px;
+}
+
+input[type="password"] {
+  width: 200px;
+  height: 20px;
 }

@@ -15,7 +15,7 @@
           <div class="form-content">
             <p class="field-title">ユーザーネーム</p>
             <div class="field"> 
-            <%= f.text_field :nickname %>
+            <%= f.text_field :nickname, placeholder:"例)アボ太朗 ※10文字まで" %>
             </div>
           </div>
 
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="login">
-      <%= link_to "ログインはこちら", new_user_session_path, class: "login-btn" %>
+      <%= link_to "ログインはこちら", new_user_session_path, class: "btn" %>
     </div>
   </div>
 </div>

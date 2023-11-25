@@ -10,9 +10,9 @@
 
       <% if user_signed_in? %>
       <li class="menu-list"><%= image_tag 'mypage.png', size: '20x20' %>
-      <%= link_to "マイページ", root_path %></li>
+      <%= link_to "マイページ", root_path, class: "btn" %></li>
       <% else %>
-      <li class="menu-list", id="login-btn">
+      <li class="menu-list", id="btn">
       <%= link_to "ログイン", new_user_session_path, class: "login-registrasion" %></li>
       <li class="menu-list">
       <%= link_to "新規登録", new_user_registration_path, class: "login-registrasion"%></li>
@@ -24,5 +24,10 @@
       <li class="menu-list"><%= image_tag 'record.png', size: '20x20' %> 記録をみる</li>
       <li class="menu-list">投稿する</li>
     </ul>
+
+      <% if user_signed_in? %>
+      <p class="logout">
+      <%= link_to "ログアウト", destroy_user_session_path,data: { turbo_method: :delete },class: "btn" %></p>
+      <% end %>
   </div>
 </div>
