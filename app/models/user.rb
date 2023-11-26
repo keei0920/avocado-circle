@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, uniqueness: true,length: { maximum: 10 }
   
-  with_options numericality: { other_than: 1, message: "can't be blank"} do
+  with_options numericality: { other_than: 1, message: "を選択してください"} do
     validates :purpose_id
     validates :prefecture_id
   end   
