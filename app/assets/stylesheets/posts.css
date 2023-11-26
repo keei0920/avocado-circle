@@ -1,70 +1,84 @@
 .header {
   display: flex;
-  width: 100%;
-  background-color: #ffffff;
-  padding-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 
-.app-title {
-  margin-top: 10px;
-  font-size: 25px;
+.top-btn {
+  display: flex;
+  list-style: none;
+}
+
+.btn-text {
+  color: black;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.mypage-btn {
+  text-decoration: none;
+  color: #E0EDDF;
+  font-weight: bold;
+}
+
+.sub-title {
+  height: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #117238;
+}
+
+.logo {
+  color: black;
+  font-size: 30px;
   font-family: 'Kaisei Decol', serif;
 }
 
-.wrapper {
+.nav-links {
   display: flex;
-  font-family: "M PLUS Rounded 1c";
+  justify-content: space-around;
+  width: 55%;
+  transition: all 0.5s ease-in-out;
 }
 
-/* サイドバー */
-.side-wrapper {
-  width: 300px;
-  height: 100vh;
-  background-color: #ffffff;
-  border: 2px solid #EDF0F3;
-}
-
-.menu-title {
-  margin-bottom : 30px;
-  font-size: 30px;
-  font-weight: 1000;
-}
-.menu-lists {
+.nav-links li {
+  font-size: 15px;
   list-style: none;
-  padding-left: 90px;
-}
-
-.menu-list {
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-
-.login-registrasion {
-  color: black;
-  padding-left: 20px;
-}
-
-#login-btn {
-  margin-bottom: 5px;
-}
-
-.logout {
-  text-align: center;
-  margin-top: 200px;
-}
-
-.btn {
-  color: black;
   text-decoration: none;
+  color: #E0EDDF;
+  font-weight: bold;
 }
 
-.logout{
-  display: block;
+.post-btn {
+  text-decoration: none;
+  color: #E0EDDF;
+  font-weight: bold;
+  border: 2px solid #E0EDDF;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px;
 }
 
 /* メイン */
 .main {
-  width: calc(100vw - 300px); 
+  width: 100%; 
   background-color: #fbfbfb;
 }
 
@@ -86,18 +100,34 @@
   text-align: center;
 }
 
+.nav-active {
+  transform: translateX(0%) !important; 
+}
 
 /* レスポンシブ （スマホ）*/
-@media screen and (max-width: 900px) {
-  .wrapper {
-    display:none;
- }
+@media screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
   
-  #hamburger {
-    position: relative;
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    top: 10vh;
+    background-color: #117238;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transform: translateX(100%);
+  }
+
+  .nav-links li {
+     font-size: 25px;
+  }
+
+  .burger {
     display: block;
-    width: 30px;
-    height: 25px;
-    margin: 0 0 0 auto;
+    padding-right: 20px;
+  }
  }
-}
