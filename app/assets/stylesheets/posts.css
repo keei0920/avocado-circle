@@ -1,5 +1,5 @@
-.wrapper {
-  background-color: #F3F3F3;
+body {
+background-color: #f3f3f3;
 }
 
 .header {
@@ -51,7 +51,7 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 55%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links li {
@@ -115,7 +115,7 @@ nav {
 
 /* レスポンシブ （スマホ）*/
 @media screen and (max-width: 768px) {
-  body {
+.header-wrapper {
     overflow: hidden;
   }
 
@@ -124,13 +124,13 @@ nav {
   }
   
   .btn-text {
-    font-size: 10px;
+    font-size: 15px;
   }
   .nav-links {
-    position: absolute;
+    position: fixed;
     right: 0;
-    height: 80vh;
-    top: 20vh;
+    height: 85vh;
+    top: 15vh;
     background-color: #ffffff;
     flex-direction: column;
     align-items: center;

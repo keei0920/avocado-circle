@@ -1,29 +1,31 @@
-<div class="header">
-    <h1 class="logo">アボカドサークル</h1>
-    <h5 class="sub-title">アボカドをみんなで育てよう</h5>
-      <ul class="top-btn">
-        <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-text" %></li>
-        <% else %>
-        <li>
-        <%= link_to "ログイン", new_user_session_path, class: "btn-text" %></li>
-        <li>
-        <%= link_to "新規登録", new_user_registration_path, class: "btn-text"%></li>
-        <% end %>
-</div>
-
-<nav class="">
-  <%= link_to "マイページ", users_show_path, class:"mypage-btn"%>
-      <ul class="nav-links">
-        <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
-        <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
-        <li class="menu-list"><%= image_tag 'answer.png', size: '20x20' %> 質問をみる</li>
-        <li class="menu-list"><%= image_tag 'record.png', size: '20x20' %> 記録をみる</li>
-      </ul>
-        <%= link_to "投稿する", root_path, class:"post-btn" %>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
+<div class="header-wrapper">
+  <div class="header">
+      <h1 class="logo">アボカドサークル</h1>
+      <h5 class="sub-title">アボカドをみんなで育てよう</h5>
+        <ul class="top-btn">
+          <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-text" %></li>
+          <% else %>
+          <li>
+          <%= link_to "ログイン", new_user_session_path, class: "btn-text" %></li>
+          <li>
+          <%= link_to "新規登録", new_user_registration_path, class: "btn-text"%></li>
+          <% end %>
   </div>
-</nav>
+
+  <nav>
+    <%= link_to "マイページ", users_show_path, class:"mypage-btn"%>
+        <ul class="nav-links">
+          <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
+          <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
+          <li class="menu-list"><%= image_tag 'answer.png', size: '20x20' %> 質問をみる</li>
+          <li class="menu-list"><%= image_tag 'record.png', size: '20x20' %> 記録をみる</li>
+        </ul>
+          <%= link_to "投稿する", root_path, class:"post-btn" %>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+</div>
