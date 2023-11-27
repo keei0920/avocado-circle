@@ -1,10 +1,9 @@
 <div class="header">
     <h1 class="logo">アボカドサークル</h1>
-  <h5 class="sub-title">アボカドをみんなで育てよう</h5>
+    <h5 class="sub-title">アボカドをみんなで育てよう</h5>
       <ul class="top-btn">
         <% if user_signed_in? %>
-        <li><%= image_tag 'mypage.png', size: '20x20' %>
-        <%= link_to "ログアウト", root_path, class: "btn-text" %></li>
+        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-text" %></li>
         <% else %>
         <li>
         <%= link_to "ログイン", new_user_session_path, class: "btn-text" %></li>
