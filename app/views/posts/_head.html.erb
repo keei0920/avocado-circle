@@ -14,7 +14,7 @@
 </div>
 
 <nav class="">
-  <%= link_to "マイページ", root_path, class:"mypage-btn"%>
+  <%= link_to "マイページ", users_show_path, class:"mypage-btn"%>
       <ul class="nav-links">
         <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
         <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
@@ -28,8 +28,3 @@
     <div class="line3"></div>
   </div>
 </nav>
-        <% if user_signed_in? %>
-        <p class="logout">
-        <%= link_to "ログアウト", destroy_user_session_path,data: { turbo_method: :delete },class: "btn" %></p>
-        <% end %>
-  </div>

@@ -1,0 +1,37 @@
+<div class="wrapper">
+
+  <%= render "/posts/head" %>
+
+  <div class="mypage-wrapper">
+    <div class="edit-content"><%= link_to "プロフィール編集" , root_path, class: "edit-btn" %>
+    </div>
+    
+    <div class ="user-contents">
+      <div class="left-contents">
+        <div class="user-name"><%= current_user.nickname %></div>
+        <div class="user-purpose-image">
+          <%= image_tag 'Frame 1.png', size: '100x100' %>
+        </div>
+        <p>アボ活歴 : </p>
+      </div>
+
+      <div class="right-contents">
+        <dl class="user-detail">
+          <dt>目的</dt> 
+            <dd><%= current_user.purpose.name %></dd>
+          <dt>都道府県</dt> 
+            <dd><%= current_user.prefecture.name %></dd>
+          <dt>自己紹介</dt> 
+            <dd><%= current_user.introduce %></dd>
+        </dl>
+      </div>
+    </div>
+
+      <div class="avocado-content">
+        <div class="avocado-name"><%= link_to 'アボカドをみる', root_path, class: "avocado-btn" %>
+        </div>
+      </div>
+
+  </div>
+
+</div>
