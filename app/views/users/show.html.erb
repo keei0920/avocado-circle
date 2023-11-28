@@ -21,7 +21,10 @@
           <dt>都道府県</dt> 
           <dd><%= current_user.prefecture.name %></dd>
           <dt>自己紹介</dt> 
-          <dd><%= current_user.introduce %></dd>
+          <dd><%= truncate(current_user.introduce, length: 50) do %>
+              <%= link_to '続きを読む', "#"  %>
+          </dd>
+          <% end %>
           <% if current_user.introduce == nil %>
           <dd><%= 'まだ記入はありません' %></dd>
           <% end %>
