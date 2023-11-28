@@ -1,40 +1,54 @@
-<div class="wrapper">
+<%= render "/posts/head" %>
 
-  <%= render "/posts/head" %>
-
-  <div class="mypage-wrapper">
-    <div class="edit-content"><%= link_to "プロフィール編集" , root_path, class: "edit-btn" %>
+<div class="mypage-wrapper">
+  <div class="edit-wrapper">
+    <div class="edit-profilet"><%= link_to "プロフィール編集" , root_path, class: "edit-btn" %>
     </div>
-    
+    <div class="edit-avocado"><%= link_to "アボカド編集" , root_path, class: "edit-btn" %>
+    </div>
+  </div>
+  <div class="contents-wrapper">
     <div class ="user-contents">
-      <div class="left-contents">
+      <div class="user-acount">
         <div class="user-name"><%= current_user.nickname %></div>
         <div class="user-purpose-image">
           <%= image_tag 'Frame 1.png', size: '100x100' %>
         </div>
-        <p>アボ活歴 : </p>
       </div>
-
-      <div class="right-contents">
-        <dl class="user-detail">
+      <dl class="user-detail">
           <dt>目的</dt> 
-            <dd><%= current_user.purpose.name %></dd>
+          <dd><%= current_user.purpose.name %></dd>
           <dt>都道府県</dt> 
-            <dd><%= current_user.prefecture.name %></dd>
+          <dd><%= current_user.prefecture.name %></dd>
           <dt>自己紹介</dt> 
-             <dd><%= current_user.introduce %></dd>
+          <dd><%= current_user.introduce %></dd>
           <% if current_user.introduce == nil %>
-             <dd><%= 'まだ記入はありません。' %></dd>
+          <dd><%= 'まだ記入はありません' %></dd>
           <% end %>
-        </dl>
-      </div>
+      </dl>
     </div>
 
-      <div class="avocado-content">
-        <div class="avocado-name"><%= link_to 'アボカドをみる', root_path, class: "avocado-btn" %>
-        </div>
+    <div class="avocado-contents">
+      <div class="avocado-name"><%= "testさんのアボカド" %>
       </div>
-
+        <p>栽培期間 :  ⚪︎⚪︎日目</p>
+        <dl class="avocado-detail">
+          <dt>最後の水やり</dt> 
+          <dd>これから入れる</dd>
+          <dt>最後の肥料</dt> 
+          <dd>これから入れる</dd>
+          <dt>最後の植替え</dt> 
+          <dd>これから入れる</dd>
+        </dl>
+      <div class="guides">
+        <p>ここにガイドを入れるよ</p>
+      </div>
+    </div>
   </div>
-
+  <div class="sub-contents">
+    <%= link_to "投稿", root_path, class:"sub-content" %>
+    <%= link_to "いいね", root_path, class:"sub-content" %>
+    <%= link_to "質問", root_path, class:"sub-content" %>
+    <%= link_to "回答", root_path, class:"sub-content" %>
+  </div>
 </div>
