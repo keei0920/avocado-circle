@@ -26,7 +26,10 @@
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | -----------------------------  |
 | name                  | string     | null: false                    |
-| birth_day             | date       | null: false                    |
+| birth_day             | date       |                                |
+| watering              | date       |                                |
+| transplant            | date       |                                |
+| fertilizer            | date       |                                |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
@@ -42,9 +45,6 @@
 | text                  | text       | null: false                    |
 | condition_id          | integer    | null: false                    |
 | date                  | date       | null: false                    |
-| watering              | date       |                                |
-| transplant            | date       |                                |
-| fertilizer            | date       |                                |
 | avocado               | references | null: false, foreign_key: true |
 
 ### Association

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @uesr = current_user.id
   end
 
   def update
@@ -13,6 +14,8 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+  
   def user_params
     params.require(:user).permit(:nickname, :email, :purpose_id, :prefecture_id, :introduce)
   end

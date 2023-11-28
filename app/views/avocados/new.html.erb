@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="side">
+      <%= render "/posts/head" %>
+  </div>
+  
+  <div class="join-wrapper">
+
+    <div class="registration-wrapper">
+      <h2>アボカド編集</h2>
+      
+      <div class="registration-form">
+        <%= form_with model: @avocado, local: true do |f| %>
+        <%= render 'shared/error', model: f.object %>
+          <div class="form-content">
+            <p class="field-title">アボカドの名前</p>
+            <div class="field"> 
+            <%= f.text_field :name, placeholder:"アボカド" %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">栽培期間</p>
+            <div class="field"> 
+            <%= f.text_field :birth_day %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">最後の水やり（任意）</p>
+            <div class="field"> 
+            <%= f.text_field :waterring %>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <p class="field-title">最後の植替え（任意）</p>
+            <div class="field"> 
+            <%= f.text_field :transplant %>
+            </div>
+          </div>
+          
+          <div class="form-content">
+            <p class="field-title">最後の肥料（任意）</p>
+            <div class="field">
+            <%= f.text_field :fertilizer %>
+            </div>
+          </div>
+
+            <div class="actions">
+              <%= f.submit "編集する" %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="login">
+      <%= link_to "トップページにもどる", root_path, class: "btn" %>
+    </div>
+  </div>
+</div>
