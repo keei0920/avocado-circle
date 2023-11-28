@@ -4,14 +4,13 @@
   </div>
   
   <div class="join-wrapper">
-  <h2 class ="title">アボカドサークルへようこそ</h2>
+
     <div class="registration-wrapper">
-      <h2>新規登録（無料）</h2>
+      <h2>プロフィール編集</h2>
       
       <div class="registration-form">
-        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-          
+        <%= form_with model: current_user, local: true do |f| %>
+        <%= render 'shared/error', model: f.object %>
           <div class="form-content">
             <p class="field-title">ユーザーネーム</p>
             <div class="field"> 
@@ -41,27 +40,20 @@
           </div>
           
           <div class="form-content">
-            <p class="field-title">パスワード</p>
+            <p class="field-title">自己紹介（任意）</p>
             <div class="field">
-            <%= f.password_field :password, placeholder:"半角英数6文字以上", autocomplete: "new-password" %>
-            </div>
-          </div>
-
-          <div class="form-content">
-            <p class="field-title">パスワード(確認)</p>
-            <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            <%= f.text_area :introduce, placeholder:"自由に書いてね！" %>
             </div>
           </div>
 
             <div class="actions">
-              <%= f.submit "登録する" %>
+              <%= f.submit "編集する" %>
             </div>
         <% end %>
       </div>
     </div>
     <div class="login">
-      <%= link_to "ログインはこちら", new_user_session_path, class: "btn" %>
+      <%= link_to "トップページにもどる", root_path, class: "btn" %>
     </div>
   </div>
 </div>

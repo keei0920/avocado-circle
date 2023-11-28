@@ -2,7 +2,7 @@
 
 <div class="mypage-wrapper">
   <div class="edit-wrapper">
-    <div class="edit-profilet"><%= link_to "プロフィール編集" , root_path, class: "edit-btn" %>
+    <div class="edit-profilet"><%= link_to "プロフィール編集" , edit_user_path(current_user), class: "edit-btn" %>
     </div>
     <div class="edit-avocado"><%= link_to "アボカド編集" , root_path, class: "edit-btn" %>
     </div>
