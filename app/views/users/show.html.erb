@@ -22,7 +22,10 @@
           <dt>都道府県</dt> 
             <dd><%= current_user.prefecture.name %></dd>
           <dt>自己紹介</dt> 
-            <dd><%= current_user.introduce %></dd>
+             <dd><%= current_user.introduce %></dd>
+          <% if current_user.introduce == nil %>
+             <dd><%= 'まだ記入はありません。' %></dd>
+          <% end %>
         </dl>
       </div>
     </div>

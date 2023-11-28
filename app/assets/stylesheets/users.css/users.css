@@ -9,12 +9,11 @@
 
 .edit-content {
   margin: 10px 20px;
-  text-align: right;
+  margin-left: 200px;
 }
 
 .user-contents {
-  display: flex;
-  padding-left: 70px;
+  padding-left: 50px;
 }
 
 .user-name {
@@ -46,8 +45,7 @@
 }
 
 .avocado-content {
-  text-align: center; 
-  margin-top: 20px;
+  text-align: center;
 }
 
 .avocado-btn {
@@ -62,6 +60,8 @@
   width: 150px;
   line-height: 30px;
 }
+
+
 /* 新規登録・ログイン */
 .title {
   width: 60%;

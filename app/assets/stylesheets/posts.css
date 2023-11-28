@@ -129,10 +129,11 @@ nav {
   .nav-links {
     position: fixed;
     right: 0;
-    height: 85vh;
-    top: 15vh;
+    height: 88vh;
+    top: 12vh;
     background-color: #ffffff;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     width: 50%;
     border: 1px solid #e0e0e0;
@@ -140,11 +141,24 @@ nav {
   }
 
   .nav-links li {
-     font-size: 15px;
+    border-bottom: solid 1px black;
+     font-size: 20px;
+     margin: 20px;
   }
 
   .burger {
     display: block;
     padding-right: 20px;
   }
+ }
+
+ /* レスポンシブ （Iphone SE）*/
+ @media screen and (max-width: 375px) {
+  .logo {
+    font-size: 15px;
+  }
+  .btn-text {
+    font-size: 10px;
+  }
+
  }
