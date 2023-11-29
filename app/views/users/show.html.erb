@@ -40,10 +40,19 @@
     <div class="avocado-contents">
       <% unless Avocado.exists?(user_id: @user.id) %>
       <div class="avocado-name"><%= "#{@user.nickname}さんのアボカド" %>
+      </div>
+      <p><%= "栽培開始日 : 未登録" %></p>
+        <dl class="avocado-detail">
+          <dt>最後の水やり</dt> 
+          <dd>未登録</dd>
+          <dt>最後の肥料</dt> 
+          <dd>未登録</dd>
+          <dt>最後の植替え</dt> 
+          <dd>未登録</dd>
+        </dl>
       <% end %>
       <% if Avocado.exists?(user_id: @user.id)  %>
       <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
-      <% end %>
       </div>
        <p><%= "栽培開始日 : #{@avocado.birth_day}" %></p>
         <dl class="avocado-detail">
@@ -54,6 +63,7 @@
           <dt>最後の植替え</dt> 
           <dd><%= @avocado.transplant %></dd>
         </dl>
+      <% end %>
       <div class="guides">
         <p>ここにガイドを入れるよ</p>
       </div>
