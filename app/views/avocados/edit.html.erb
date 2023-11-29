@@ -6,10 +6,10 @@
   <div class="join-wrapper">
 
     <div class="registration-wrapper">
-      <h2>アボカド登録</h2>
+      <h2>アボカド編集</h2>
       
       <div class="registration-form">
-        <%= form_with model: @avocado, local: true do |f| %>
+        <%= form_with(model: @avocado, local: true) do |f| %>
         <%= render 'shared/error', model: f.object %>
           <div class="form-content">
             <p class="field-title">アボカドの名前</p>

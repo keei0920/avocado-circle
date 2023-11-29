@@ -2,7 +2,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :purpose
-  has_many   :avocades
+  has_one    :avocado
 
   validates :nickname, presence: true, uniqueness: true,length: { maximum: 10 }
   

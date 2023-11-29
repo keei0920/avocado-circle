@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def show
+    if Avocado.exists?(user_id: current_user.id)
+      @avocado = Avocado.find(current_user.id)
+    end
   end
 
   def edit

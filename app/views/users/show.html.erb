@@ -4,8 +4,14 @@
   <div class="edit-wrapper">
     <div class="edit-profilet"><%= link_to "プロフィール編集" , edit_user_path(current_user), class: "edit-btn" %>
     </div>
-    <div class="edit-avocado"><%= link_to "アボカド編集" ,  new_avocado_path, class: "edit-btn" %>
+    <% unless Avocado.exists?(user_id: current_user.id) %>
+    <div class="edit-avocado"><%= link_to "アボカドの登録" ,  new_avocado_path, class: "edit-btn" %>
     </div>
+    <% end %>
+    <% if Avocado.exists?(user_id: current_user.id)  %>
+    <div class="edit-avocado"><%= link_to "アボカドの編集" ,  edit_avocado_path(@avocado), class: "edit-btn" %>
+    </div>
+    <% end %>
   </div>
   <div class="contents-wrapper">
     <div class ="user-contents">
@@ -32,7 +38,12 @@
     </div>
 
     <div class="avocado-contents">
-      <div class="avocado-name"><%= "testさんのアボカド" %>
+      <% unless Avocado.exists?(user_id: current_user.id) %>
+      <div class="avocado-name"><%= "#{current_user.nickname}さんのアボカド" %>
+      <% end %>
+      <% if Avocado.exists?(user_id: current_user.id)  %>
+      <div class="avocado-name"><%= "#{current_user.nickname}さんの#{current_user.avocado.name}" %>
+      <% end %>
       </div>
         <p>栽培期間 :  ⚪︎⚪︎日目</p>
         <dl class="avocado-detail">

@@ -12,7 +12,11 @@
   </div>
 
   <nav>
-    <%= link_to "マイページ", users_show_path, class:"mypage-btn"%>
+    <% if user_signed_in? %>
+    <%= link_to "マイページ", users_show_path(current_user), class:"mypage-btn"%>
+    <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %>
+    <% end %>
         <ul class="nav-links">
           <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
           <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
