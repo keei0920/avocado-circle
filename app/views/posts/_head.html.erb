@@ -13,7 +13,7 @@
 
   <nav>
     <% if user_signed_in? %>
-    <%= link_to "マイページ", users_show_path(current_user), class:"mypage-btn"%>
+    <%= link_to "マイページ", user_path(current_user), class:"mypage-btn"%>
     <% else %>
     <%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %>
     <% end %>

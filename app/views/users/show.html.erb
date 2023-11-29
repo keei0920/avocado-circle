@@ -2,13 +2,13 @@
 
 <div class="mypage-wrapper">
   <div class="edit-wrapper">
-    <div class="edit-profilet"><%= link_to "プロフィール編集" , edit_user_path(current_user), class: "edit-btn" %>
+    <div class="edit-profilet"><%= link_to "プロフィール編集" , edit_user_path(@user), class: "edit-btn" %>
     </div>
-    <% unless Avocado.exists?(user_id: current_user.id) %>
-    <div class="edit-avocado"><%= link_to "アボカドの登録" ,  new_avocado_path, class: "edit-btn" %>
+    <% unless Avocado.exists?(user_id: @user.id) %>
+    <div class="edit-avocado"><%= link_to "アボカドの登録" ,  new_avocado_path(@avocado), class: "edit-btn" %>
     </div>
     <% end %>
-    <% if Avocado.exists?(user_id: current_user.id)  %>
+    <% if Avocado.exists?(user_id: @user.id)  %>
     <div class="edit-avocado"><%= link_to "アボカドの編集" ,  edit_avocado_path(@avocado), class: "edit-btn" %>
     </div>
     <% end %>
@@ -16,43 +16,43 @@
   <div class="contents-wrapper">
     <div class ="user-contents">
       <div class="user-acount">
-        <div class="user-name"><%= current_user.nickname %></div>
+        <div class="user-name"><%= @user.nickname %></div>
         <div class="user-purpose-image">
           <%= image_tag 'Frame 1.png', size: '100x100' %>
         </div>
       </div>
       <dl class="user-detail">
           <dt>目的</dt> 
-          <dd><%= current_user.purpose.name %></dd>
+          <dd><%= @user.purpose.name %></dd>
           <dt>都道府県</dt> 
-          <dd><%= current_user.prefecture.name %></dd>
+          <dd><%= @user.prefecture.name %></dd>
           <dt>自己紹介</dt> 
-          <dd><%= truncate(current_user.introduce, length: 50) do %>
+          <dd><%= truncate(@user.introduce, length: 50) do %>
               <%= link_to '続きを読む', "#"  %>
           </dd>
           <% end %>
-          <% if current_user.introduce == nil %>
+          <% if @user.introduce = "" %>
           <dd><%= 'まだ記入はありません' %></dd>
           <% end %>
       </dl>
     </div>
 
     <div class="avocado-contents">
-      <% unless Avocado.exists?(user_id: current_user.id) %>
-      <div class="avocado-name"><%= "#{current_user.nickname}さんのアボカド" %>
+      <% unless Avocado.exists?(user_id: @user.id) %>
+      <div class="avocado-name"><%= "#{@user.nickname}さんのアボカド" %>
       <% end %>
-      <% if Avocado.exists?(user_id: current_user.id)  %>
-      <div class="avocado-name"><%= "#{current_user.nickname}さんの#{current_user.avocado.name}" %>
+      <% if Avocado.exists?(user_id: @user.id)  %>
+      <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
       <% end %>
       </div>
-        <p>栽培開始日 :  ⚪︎⚪︎日目</p>
+       <p><%= "栽培開始日 : #{@avocado.birth_day}" %></p>
         <dl class="avocado-detail">
           <dt>最後の水やり</dt> 
-          <dd>これから入れる</dd>
+          <dd><%= @avocado.watering %></dd>
           <dt>最後の肥料</dt> 
-          <dd>これから入れる</dd>
+          <dd><%= @avocado.fertilizer %></dd>
           <dt>最後の植替え</dt> 
-          <dd>これから入れる</dd>
+          <dd><%= @avocado.transplant %></dd>
         </dl>
       <div class="guides">
         <p>ここにガイドを入れるよ</p>

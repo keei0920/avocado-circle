@@ -6,7 +6,7 @@ class AvocadosController < ApplicationController
   def create
     @avocado = Avocado.new(avocado_params)
    if @avocado.save
-    redirect_to users_show_path
+    redirect_to user_path
    else
     render :new, status: :unprocessable_entity
    end
@@ -19,7 +19,7 @@ class AvocadosController < ApplicationController
   def update
     @avocado = Avocado.find(params[:id])
     if @avocado.update(avocado_params)
-      redirect_to users_show_path
+      redirect_to user_path
     else
       render :edit, status: :unprocessable_entity
     end
