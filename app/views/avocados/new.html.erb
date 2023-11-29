@@ -22,13 +22,7 @@
             <p class="field-title">栽培開始日（任意）</p>
            <div class="field"> 
             <% f.label :birth_day %>
-            <%= raw sprintf(
-                            f.date_select(:birth_day,
-                              use_month_number: true,
-                              prompt:'--',
-                              start_year:       (Time.now.year),
-                              end_year:         1970,
-                              date_separator:'/')) %>
+            <%= f.date_field(:birth_day) %>
             </div>
           </div>
 
@@ -36,13 +30,7 @@
             <p class="field-title">最後の水やり（任意）</p>
             <div class="field"> 
              <% f.label :watering %>
-             <%= raw sprintf(
-                            f.date_select(:watering,
-                              use_month_number: true,
-                              prompt:'--',
-                              start_year:       (Time.now.year),
-                              end_year:         2023,
-                              date_separator:'/')) %>
+             <%= f.date_field(:watering) %>
             </div>
           </div>
 
@@ -50,13 +38,7 @@
             <p class="field-title">最後の植替え（任意）</p>
             <div class="field"> 
              <% f.label :transplant %>
-             <%= raw sprintf(
-                            f.date_select(:transplant,
-                              use_month_number: true,
-                              prompt:'--',
-                              start_year:       (Time.now.year),
-                              end_year:         2023,
-                              date_separator:'/')) %>
+             <%= f.date_field(:transplant) %>
             </div>
           </div>
           
@@ -64,13 +46,7 @@
             <p class="field-title">最後の肥料（任意）</p>
             <div class="field">
               <% f.label :fertilizer %>
-              <%= raw sprintf(
-                            f.date_select(:fertilizer,
-                              use_month_number: true,
-                              prompt:'--',
-                              start_year:       (Time.now.year),
-                              end_year:         2023,
-                              date_separator:'/')) %>
+              <%= f.date_field(:fertilizer) %>
             </div>
           </div>
 

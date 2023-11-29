@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="post-contents">
+      <div class="exit-btn"><%= link_to image_tag('exit.png', size:'45x45') , root_path %></div>
+    <div class="post-header">
+      <h1>新規投稿</h1>
+    </div>
+    <div class="post-body">
+      <%= form_with model: @post, local: true do |f| %>
+       <%#= render 'shared/error', model: f.object %>
+       <div class="date-content">
+            <p class="post-date">記録日</p>
+            <div class="date-form"> 
+             <% f.label :date %>
+             <%= f.date_field(:date) %>
+            </div>
+       </div>
+      <% end %>
+    </div> 
+  </div>
+</div>
