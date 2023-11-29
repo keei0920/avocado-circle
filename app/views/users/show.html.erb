@@ -41,28 +41,22 @@
       <% unless Avocado.exists?(user_id: @user.id) %>
       <div class="avocado-name"><%= "#{@user.nickname}さんのアボカド" %>
       </div>
-      <p><%= "栽培開始日 : 未登録" %></p>
-        <dl class="avocado-detail">
-          <dt>最後の水やり</dt> 
-          <dd>未登録</dd>
-          <dt>最後の肥料</dt> 
-          <dd>未登録</dd>
-          <dt>最後の植替え</dt> 
-          <dd>未登録</dd>
-        </dl>
+        <p class="start-date">栽培開始日 : 未登録</p>
+        <div class="avocado-detail">
+          <p>最後の水やり: 未登録</p> 
+          <p>最後の肥料： 未登録</p> 
+          <p>最後の植替え: 未登録</p>
+        </div>
       <% end %>
       <% if Avocado.exists?(user_id: @user.id)  %>
       <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
       </div>
-       <p><%= "栽培開始日 : #{@avocado.birth_day}" %></p>
-        <dl class="avocado-detail">
-          <dt>最後の水やり</dt> 
-          <dd><%= @avocado.watering %></dd>
-          <dt>最後の肥料</dt> 
-          <dd><%= @avocado.fertilizer %></dd>
-          <dt>最後の植替え</dt> 
-          <dd><%= @avocado.transplant %></dd>
-        </dl>
+       <p class="start-date"><%= "栽培開始日 : #{@avocado.birth_day}" %></p>
+        <div class="avocado-detail">
+          <p>最後の水やり: <%= @avocado.watering %></p>
+          <p>最後の肥料: <%= @avocado.fertilizer %></p>
+          <p>最後の植替え: <%= @avocado.transplant %></p>
+        </div>
       <% end %>
       <div class="guides">
         <p>ここにガイドを入れるよ</p>

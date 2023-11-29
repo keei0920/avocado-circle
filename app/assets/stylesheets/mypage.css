@@ -51,26 +51,14 @@
   text-align: center;
 }
 
-.avocado-contents p {
+.start-date {
   text-align: center;
   font-weight: bold;
 }
 
 .avocado-detail {
-  line-height: 30px;
+  line-height: 20px;
   height: 100px;
-}
-
-.avocado-detail dt {
-  float: left;
-}
-
-.avocado-detail dt::after {
-  content: " : "; 
-}
-
-.avocado-detail dd {
-  margin-left: 120px;
 }
 
 .guides {
