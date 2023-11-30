@@ -3,6 +3,7 @@ class User < ApplicationRecord
   belongs_to :prefecture
   belongs_to :purpose
   has_one    :avocado
+  has_many   :posts
 
   validates :nickname, presence: true, uniqueness: true,length: { maximum: 10 }
   
