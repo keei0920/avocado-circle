@@ -7,13 +7,30 @@
     <div class="post-body">
       <%= form_with model: @post, local: true do |f| %>
        <%#= render 'shared/error', model: f.object %>
-       <div class="date-content">
-            <p class="post-date">記録日</p>
-            <div class="date-form"> 
-             <% f.label :date %>
-             <%= f.date_field(:date) %>
-            </div>
-       </div>
+      <div class="top-contents">
+        <div class="date-content">
+          <p class="post-date">記録日</p>
+          <div class="date-form"> 
+            <% f.label :date %>
+            <%= f.date_field(:date) %>
+          </div>
+        </div>
+        <div class="condition-content">
+          <p class="post-condition">調子</p>
+          <div class="condition-form"> 
+            <% f.label :condition %>
+            <%= f.text_field(:condition) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-contents">
+        画像
+      </div>
+
+      <div class="text-contents">
+        テキスト
+      </div>
       <% end %>
     </div> 
   </div>
