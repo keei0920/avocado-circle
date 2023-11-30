@@ -155,7 +155,7 @@ nav {
  /* レスポンシブ （Iphone SE）*/
  @media screen and (max-width: 375px) {
   .logo {
-    font-size: 15px;
+    font-size: 18px;
   }
   .btn-text {
     font-size: 10px;
