@@ -42,9 +42,13 @@ nav {
 }
 
 .logo {
-  color: black;
   font-size: 30px;
   font-family: 'Kaisei Decol', serif;
+}
+
+.logo a {
+  color: black;
+  text-decoration: none;
 }
 
 .nav-links {
