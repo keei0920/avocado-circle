@@ -4,34 +4,46 @@
     <div class="post-header">
       <h1>新規投稿</h1>
     </div>
+
     <div class="post-body">
       <%= form_with model: @post, local: true do |f| %>
        <%#= render 'shared/error', model: f.object %>
       <div class="top-contents">
         <div class="date-content">
-          <p class="post-date">記録日</p>
+          <p class="date-title">記録日</p>
           <div class="date-form"> 
             <% f.label :date %>
-            <%= f.date_field(:date) %>
+            <%= f.date_field(:date, class:"form-box") %>
           </div>
         </div>
         <div class="condition-content">
-          <p class="post-condition">調子</p>
+          <p class="condition-title">調子</p>
           <div class="condition-form"> 
-            <% f.label :condition %>
-            <%= f.text_field(:condition) %>
+            <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"form-box"}) %>
           </div>
         </div>
       </div>
 
-      <div class="image-contents">
-        画像
+      <div class="text-contents">
+        <p class="text-title"></p>
+        <div class="text-form"> 
+          <% f.label :text %>
+          <%= f.text_area(:text, size:'45x10', class:"form-box", placeholder:"メモなど自由に書いて使ってね！") %>
+        </div>
       </div>
 
-      <div class="text-contents">
-        テキスト
+      <div class="image-content">
+        <p class="image-title"></p>
+        <div class="image-form"> 
+          <% f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+      </div>
+
+    </div> 
+      <div class="post-btn">
+      <%= f.submit "投稿する", class:"post-submit" %>
       </div>
       <% end %>
-    </div> 
   </div>
 </div>
