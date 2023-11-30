@@ -15,6 +15,7 @@
 ### Association
 
 - has_many :avocados
+- has_many :posts
 - has_many :comments
 - has_many :questions
 - has_many :answers
@@ -34,7 +35,6 @@
 
 ### Association
 
-- has_many   :posts
 - belongs_to :user
 
 
@@ -45,12 +45,12 @@
 | text                  | text       | null: false                    |
 | condition_id          | integer    | null: false                    |
 | date                  | date       | null: false                    |
-| avocado               | references | null: false, foreign_key: true |
+| user                  | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :avocado
-- have_many  :comments
+- belongs_to :user
+- has_many  :comments
 
 
 ## comments テーブル
