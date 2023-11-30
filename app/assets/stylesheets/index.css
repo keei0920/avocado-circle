@@ -1,0 +1,34 @@
+.posts-content {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: 1px solid black;
+}
+
+.posts-content:first-child {
+  margin-top: 15px;
+}
+
+.post-username {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.post-profiele {
+  display: flex;
+}
+
+.post-details {
+  display: flex;
+}
+
+.post-condition {
+  margin-left: 30px;
+}
+
+.text-line {
+  border-bottom: 1px solid #eeeeee;
+}
+

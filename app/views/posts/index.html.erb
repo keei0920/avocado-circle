@@ -3,7 +3,24 @@
     <%= render "head" %>
   </div>
 
-  <div class="main">
+  <div class="nav-bar">
     <%= render "main" %>
+  </div>
+  
+  <div class="posts-wrapper">
+  <% @posts.each do |post| %>
+     <div class="posts-content">
+      <div class="post-profiele">
+        <p class="post-username"><%= post.user.nickname %></p>
+        <p class="user-prefecture">[<%= post.user.prefecture.name %>]</p>
+      </div>
+      <div class="post-details">
+      <p class="post-date">記録日：<%= post.date %></p>
+      <p class="post-condition">状態：<%= post.condition.name %></p>
+      </div>
+      <p class="post-image"><%= image_tag post.image %></p>
+      <p class="post-text"><%= post.text %></p>
+     </div>
+  <% end %>
   </div>
 </div>
