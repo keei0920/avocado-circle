@@ -5,14 +5,14 @@ class AvocadosController < ApplicationController
 
   def create
     @avocado = Avocado.new(avocado_params)
-   if @avocado.save
-    redirect_to user_path(@avocado.user)
-   else
-    render :new, status: :unprocessable_entity
-   end
+    if @avocado.save
+      redirect_to user_path(@avocado.user)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-  def edit 
+  def edit
     @avocado = Avocado.find(params[:id])
   end
 
@@ -24,7 +24,6 @@ class AvocadosController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
 
   private
 

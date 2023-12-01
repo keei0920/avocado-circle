@@ -5,12 +5,12 @@ class User < ApplicationRecord
   has_one    :avocado
   has_many   :posts
 
-  validates :nickname, presence: true, uniqueness: true,length: { maximum: 10 }
-  
-  with_options numericality: { other_than: 1, message: "を選択してください"} do
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
+
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :purpose_id
     validates :prefecture_id
-  end   
+  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

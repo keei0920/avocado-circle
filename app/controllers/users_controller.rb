@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    if Avocado.exists?(user_id: @user.id)
-      @avocado = Avocado.find(@user.id)
-    end
+    return unless Avocado.exists?(user_id: @user.id)
+
+    @avocado = Avocado.find(@user.id)
   end
 
   def edit
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(:nickname, :email, :purpose_id, :prefecture_id, :introduce)
   end
