@@ -119,10 +119,13 @@ nav {
   transform: translateX(0%) !important; 
 }
 
-/* レスポンシブ （スマホ）*/
+/* レスポンシブ （タブレット）*/
 @media screen and (max-width: 768px) {
-.header-wrapper {
+  .header-wrapper {
     overflow: hidden;
+  }
+  .btn-text {
+    margin-right: 50px;
   }
 
   .logo {
@@ -158,8 +161,9 @@ nav {
   }
  }
 
- /* レスポンシブ （Iphone SE）*/
- @media screen and (max-width: 375px) {
+ /* レスポンシブ （スマホ）*/
+ @media screen and (max-width: 450px) {
+
   .logo {
     font-size: 18px;
   }

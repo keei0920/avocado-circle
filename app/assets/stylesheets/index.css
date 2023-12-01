@@ -61,9 +61,40 @@
   cursor: pointer;
 }
 
-/* レスポンシブ （スマホ）*/
+/* レスポンシブ （タブレット）*/
 @media screen and (max-width: 768px) {
+  .posts-wrapper{
+   width: 100%;
+  }
+ 
+  .posts-content:first-child{
+   margin-top: 0px;
+  }
+ 
+  .post-details { 
+   font-size: 12px;
+  }
+ }
+
+/* レスポンシブ （スマホ）*/
+@media screen and (max-width: 450px) {
+ .posts-wrapper{
+  width: 90%;
+ }
+ 
+ .posts-content{
+  width: 100%;
+ }
+
+ .post-image {
+  text-align: center;
+ }
+
+ .posts-content:first-child{
+  margin-top: 0px;
+ }
+
  .post-details { 
   font-size: 12px;
-}
+ }
 }

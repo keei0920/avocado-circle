@@ -3,7 +3,7 @@
 }
 
 .post-contents {
-  width: 720px;
+  max-width: 720px;
   height: 600px;
   background-color: #ffffff;
   margin: 0 auto;
@@ -78,4 +78,34 @@
   box-shadow: none;
   display: block;
   margin: auto;
+}
+
+/* レスポンシブ （スマホ）*/
+@media screen and (max-width: 768px) {
+  .post-contents { 
+   width: 100%;
+ }
+ .text-contents {
+  margin: 0 auto;
+  width: 300px;
+ }
+
+ .form-box {
+  width: 100%;
+ }
+}
+
+/* レスポンシブ （スマホ）*/
+@media screen and (max-width: 400px) {
+  .post-contents { 
+   width: 100%;
+ }
+ .text-contents {
+  margin: 0 auto;
+  width: 300px;
+ }
+
+ .form-box {
+  width: 100%;
+ }
 }

@@ -1,14 +1,14 @@
  <div class="header-wrapper">
   <div class="header">
-      <h1 class="logo"><%= link_to 'アボカドサークル', root_path(current_user) %></h1>
-      <h5 class="sub-title">アボカドをみんなで育てよう</h5>
-        <ul class="top-btn">
-          <% if user_signed_in? %>
-          <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-text" %></li>
-          <% else %>
-          <li><%= link_to "ログイン", new_user_session_path, class: "btn-text" %></li>
-          <li><%= link_to "新規登録", new_user_registration_path, class: "btn-text"%></li>
-          <% end %>
+    <h1 class="logo"><%= link_to 'アボカドサークル', root_path(current_user) %></h1>
+    <h5 class="sub-title">アボカドをみんなで育てよう</h5>
+      <ul class="top-btn">
+      <% if user_signed_in? %>
+      <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-text" %></li>
+      <% else %>
+      <li><%= link_to "ログイン", new_user_session_path, class: "btn-text" %></li>
+      <li><%= link_to "新規登録", new_user_registration_path, class: "btn-text"%></li>
+      <% end %>
   </div>
 
   <nav>
