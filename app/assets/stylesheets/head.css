@@ -39,6 +39,8 @@ nav {
   min-height: 8vh;
   background-color: #ffffff;
   border-bottom: 5px solid #fbfbfb;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .logo {

@@ -7,6 +7,11 @@
   border-bottom: 2px solid #eeeeee;
 }
 
+.posts-content a {
+  text-decoration: none;
+  color: black;
+}
+
 .posts-content:first-child {
   margin-top: 15px;
 }

@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="side">
+    <%= render "head" %>
+  </div>
+
+  <div class="nav-bar">
+    <%= render "main" %>
+  </div>
+  
+  <div class="posts-wrapper">
+     <div class="posts-content">
+      <div class="post-profiele">
+        <% if @post.user.purpose_id == 2 %>
+        <div class="user-logo"><%= image_tag 'Frame 1.png', size: '30x30', class:"logo-image" %>
+        </div>
+        <% end %>
+        <p class="post-username"><%= @post.user.nickname %></p>
+        <p class="user-prefecture">[<%= @post.user.prefecture.name %>]</p>
+      </div>
+      <div class="post-details">
+      <p class="post-date">記録日：<%= @post.date %></p>
+      <p class="post-condition">状態：<%= @post.condition.name %></p>
+      </div>
+      <% if @post.image.attached? %>
+      <p class="post-image"><%= image_tag @post.image.variant(resize: '150x150') %></p>
+      <% end %>
+      <p class="post-text"><%= @post.text %></p>
+     </div>
+  </div>
+</div>
