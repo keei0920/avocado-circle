@@ -16,6 +16,8 @@
         <% end %>
         <p class="post-username"><%= link_to post.user.nickname,user_path(post.user) %></p>
         <p class="user-prefecture">[<%= post.user.prefecture.name %>]</p>
+        <% if post.user_id == current_user.id %>
+        <% end %>
       </div>
      <div class="posts-box">
       <%= link_to (post_path(post)) do %>
@@ -28,7 +30,6 @@
        <p class="post-image"><%= image_tag post.image.variant(resize: '150x150') %></p>
       <% end %>
       <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
-       <%= link_to '続きを読む',post_path(post)  %>
       <% end %>
      <% end %>
      </div>

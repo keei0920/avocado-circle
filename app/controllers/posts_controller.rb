@@ -20,6 +20,30 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    unless current_user.id == @post.user_id
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+   else
+     render :edit, status: :unprocessable_entity
+   end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user_id
+      @post.destroy
+   end
+   redirect_to root_path
+  end
+
   private
 
   def post_params

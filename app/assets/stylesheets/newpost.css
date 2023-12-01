@@ -72,8 +72,10 @@
 
 .post-submit {
   color: #ffffff;
-  background-color: #117238;
-  border-color: #117238;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
   display: block;
   margin: auto;
 }
