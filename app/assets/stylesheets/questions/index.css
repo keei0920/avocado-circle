@@ -1,0 +1,12 @@
+.question-header {
+  height: 53px;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #e0e0e0;
+}
+
+.question-title {
+  font-weight: bold;
+}
