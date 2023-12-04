@@ -19,7 +19,8 @@
     <% end %>
         <ul class="nav-links">
           <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
-          <li class="menu-list"><%= image_tag 'question.png', size: '20x20' %> 質問する</li>
+          <li><%= image_tag 'question.png', size: '20x20' %> 
+            <%= link_to '質問する', questions_new_path,class:"menu-list" %></li>
           <li class="menu-list"><%= image_tag 'answer.png', size: '20x20' %> 質問をみる</li>
           <li class="menu-list"><%= image_tag 'record.png', size: '20x20' %> 記録をみる</li>
         </ul>

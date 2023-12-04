@@ -69,6 +69,11 @@ nav {
   background-color: #ffffff;
 }
 
+.menu-list {
+  text-decoration: none;
+  color: black;
+}
+
 .post-btn {
   text-decoration: none;
   color: #ffffff;

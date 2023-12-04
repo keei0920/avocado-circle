@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'questions/new'
   devise_for :users
   root to: "posts#index"
   resources :users, only: [:show, :edit, :update]

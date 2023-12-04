@@ -28,29 +28,20 @@
   margin: 0 auto;
 }
 
+.top-contents {
+  margin-top: 30px;
+}
+
 .form-box {
   border-radius: 5px;
   border: 3px solid #AAAAAA;
 }
 
-.date-content {
+.title-content {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.date-title {
-  margin-right: 100px;
-}
-
-.condition-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.condition-title {
-  margin-right: 200px;
+  margin-bottom: 40px;
 }
 
 .text-contents {
@@ -92,6 +83,10 @@
  .form-box {
   width: 100%;
  }
+
+ .title-box {
+  width: 100%;
+ }
 }
 
 /* レスポンシブ （スマホ）*/
@@ -105,6 +100,10 @@
  }
 
  .form-box {
+  width: 100%;
+ }
+
+ .title-box {
   width: 100%;
  }
 }

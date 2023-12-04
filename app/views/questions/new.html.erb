@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="post-contents">
+      <div class="exit-btn"><%= link_to image_tag('exit.png', size:'45x45') , root_path %></div>
+    <div class="post-header">
+      <h1>質問投稿</h1>
+    </div>
+
+    <div class="post-body">
+      <%= form_with model: @post, local: true do |f| %>
+       <%# render 'shared/error', model: f.object %>
+      <div class="top-contents">
+        <div class="title-content">
+          <div class="title-form"> 
+            <% f.label :title %>
+            <%= f.text_area(:title, class:"title-box", size:'35x1', placeholder: "タイトル") %>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-contents">
+        <div class="text-form"> 
+          <% f.label :text %>
+          <%= f.text_area(:text, size:'45x10', class:"form-box", placeholder:"質問したい詳しい内容をここに書いてね！") %>
+        </div>
+      </div>
+
+      <div class="image-content">
+        <p class="image-title"></p>
+        <div class="image-form"> 
+          <% f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+      </div>
+
+    </div> 
+      <div class="post-btn">
+      <%= f.submit "質問する", class:"post-submit" %>
+      </div>
+      <% end %>
+  </div>
+</div>
