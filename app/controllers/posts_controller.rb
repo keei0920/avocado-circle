@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy, ]
+
   def index
     @posts = Post.includes(:user).order('created_at DESC')
   end
@@ -17,18 +19,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
     unless current_user.id == @post.user_id
       redirect_to root_path
     end
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to root_path
    else
@@ -37,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     if current_user.id == @post.user_id
       @post.destroy
    end
@@ -48,5 +46,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:image, :date, :condition_id, :text).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

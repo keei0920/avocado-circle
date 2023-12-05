@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set_user, only: [:show, :edit, :update]
+
   def show
-    @user = User.find(params[:id])
     return unless Avocado.exists?(user_id: @user.id)
 
     @avocado = Avocado.find(@user.id)
   end
 
   def edit
-    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      redirect_to root_path
+    end
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path
     else
@@ -23,5 +26,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email, :purpose_id, :prefecture_id, :introduce)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

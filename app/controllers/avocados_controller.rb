@@ -1,4 +1,7 @@
 class AvocadosController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_avocado, only: [:edit, :update]
+
   def new
     @avocado = Avocado.new
   end
@@ -13,11 +16,12 @@ class AvocadosController < ApplicationController
   end
 
   def edit
-    @avocado = Avocado.find(params[:id])
+    unless current_user.id == @avocado.user_id
+      redirect_to root_path
+    end
   end
 
   def update
-    @avocado = Avocado.find(params[:id])
     if @avocado.update(avocado_params)
       redirect_to user_path(@avocado.user)
     else
@@ -29,5 +33,9 @@ class AvocadosController < ApplicationController
 
   def avocado_params
     params.require(:avocado).permit(:name, :birth_day, :watering, :fertilizer, :transplant).merge(user_id: current_user.id)
+  end
+
+  def set_avocado
+    @avocado = Avocado.find(params[:id])
   end
 end
