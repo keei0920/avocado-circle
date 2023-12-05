@@ -20,7 +20,11 @@
       <div class="user-acount">
         <div class="user-name"><%= @user.nickname %></div>
         <div class="user-purpose-image">
-          <%= image_tag 'Frame 1.png', size: '100x100' %>
+          <% if @user.purpose_id == 2 %>
+          <%= image_tag 'Frame2.png', size: '100x100' %>
+          <% elsif @user.purpose_id == 3 %>
+          <%= image_tag 'Frame3.png', size: '100x100' %>
+          <% end %>
         </div>
       </div>
       <dl class="user-detail">

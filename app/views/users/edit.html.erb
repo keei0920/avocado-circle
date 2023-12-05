@@ -9,7 +9,7 @@
       <h2>プロフィール編集</h2>
       
       <div class="registration-form">
-        <%= form_with model: current_user, local: true do |f| %>
+        <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error', model: f.object %>
           <div class="form-content">
             <p class="field-title">ユーザーネーム</p>

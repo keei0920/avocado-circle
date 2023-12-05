@@ -1,6 +1,9 @@
  <div class="header-wrapper">
   <div class="header">
+    <div class="main-title">
+    <%= image_tag 'logo.jpg', size: '40x40' %>
     <h1 class="logo"><%= link_to 'アボカドサークル', root_path(current_user) %></h1>
+    </div>
     <h5 class="sub-title">アボカドをみんなで育てよう</h5>
       <ul class="top-btn">
       <% if user_signed_in? %>

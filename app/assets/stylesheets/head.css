@@ -7,7 +7,12 @@ background-color: #f3f3f3;
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  background-color: #F3F3F3;
+  background-color: #ffffff;
+}
+
+.main-title {
+  display: flex;
+  align-items: center;
 }
 
 .top-btn {
@@ -169,10 +174,10 @@ nav {
  /* レスポンシブ （スマホ）*/
  @media screen and (max-width: 450px) {
   .logo {
-    font-size: 20px;
+    font-size: 17px;
   }
   .btn-text {
-    font-size: 14px;
+    font-size: 10px;
   }
 
  }
