@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="side">
+     <%= render "/posts/head" %>
+  </div>
+
+  <div class="question-header"><%= @question.user.nickname %>さんの質問</div>
+  
+  <div class="posts-wrapper">
+    <div class="posts-content">
+      <div class="post-profiele">
+        <% if @question.user.purpose_id == 2 %>
+        <div class="user-logo"><%= image_tag 'Frame 1.png', size: '30x30', class:"logo-image" %>
+        </div>
+        <% end %>
+        <p class="post-username"><%= link_to @question.user.nickname,user_path(@question.user) %></p>
+        <p class="user-prefecture">[<%= @question.user.prefecture.name %>]</p>
+      </div>
+      <% if @question.image.attached? %>
+      <p class="post-image"><%= image_tag @question.image.variant(resize: '150x150') %></p>
+      <% end %>
+      <p class="question-title">『<%= @question.title %>』</p>
+     <p class="question-text"><%= @question.text %></p>
+    <% if current_user.id == @question.user_id %>
+    <div class="post-edit"><%= link_to "編集する", root_path %>
+    </div>
+    <% else %>
+    <div class="post-edit"><%= link_to "回答する", root_path %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>  

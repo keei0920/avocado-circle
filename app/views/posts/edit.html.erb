@@ -7,7 +7,7 @@
 
     <div class="post-body">
       <%= form_with model: @post, local: true do |f| %>
-       <%#= render 'shared/error', model: f.object %>
+       <%= render 'shared/error', model: f.object %>
       <div class="top-contents">
         <div class="date-content">
           <p class="date-title">記録日</p>

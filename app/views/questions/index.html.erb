@@ -7,17 +7,28 @@
 
 <div class="post-wrapper">
    <% @questions.each do |question| %>
-    <div class="posts-content">
+  <div class="posts-content">
+      <div class="post-profiele">
       <% if question.user.purpose_id == 2 %>
         <div class="user-logo"><%= image_tag 'Frame 1.png', size: '30x30', class:"logo-image" %></div>
       <% end %>
         <p class="post-username"><%= link_to question.user.nickname,user_path(question.user) %></p>
         <p class="user-prefecture">[<%= question.user.prefecture.name %>]</p>
+      </div>
+
+   <%= link_to question_path(question) do %>
+   <div class="posts-box">
      <p class="question-title">『<%= question.title %>』</p>
      <p class="question-text"><%= truncate(question.text, length: 50) %></p>
-     <% if question.image.attached? %>
+       <% if question.image.attached? %>
        <p class="post-image"><%= image_tag question.image.variant(resize: '150x150') %></p>
-     <% end %>
-    </div>
+       <% end %>
+       <% unless current_user.id == question.user.id %>
+       <div class="post-edit"><%= link_to "回答する", root_path %>
+       </div>
+       <% end %>
+   </div>
+   <% end %>
+  </div>
   <% end %>
   </div>
