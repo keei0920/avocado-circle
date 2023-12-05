@@ -4,14 +4,13 @@
   </div>
   
   <div class="join-wrapper">
-  <h2 class ="title">今日も来てくれてありがとう！</h2>
+  <h2 class ="title">ログイン</h2>
     <div class="registration-wrapper">
       <%= flash[:alert] %>
-      <h2>ログイン</h2>
       
+      <%= render "devise/shared/error_messages", resource: resource %>
       <div class="registration-form">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="form-content">
             <p class="field-title">メールアドレス</p>

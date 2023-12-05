@@ -168,12 +168,11 @@ nav {
 
  /* レスポンシブ （スマホ）*/
  @media screen and (max-width: 450px) {
-
   .logo {
-    font-size: 18px;
+    font-size: 20px;
   }
   .btn-text {
-    font-size: 10px;
+    font-size: 14px;
   }
 
  }

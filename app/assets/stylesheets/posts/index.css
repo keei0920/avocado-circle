@@ -7,7 +7,6 @@
   border-bottom: 2px solid #eeeeee;
 }
 
-
 .posts-content a {
   text-decoration: none;
   color: black;
@@ -81,10 +80,11 @@
 @media screen and (max-width: 450px) {
  .posts-wrapper{
   width: 90%;
+  margin: 0 auto;
  }
  
  .posts-content{
-  width: 100%;
+  width: 80%;
  }
 
  .post-image {
