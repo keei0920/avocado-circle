@@ -21,7 +21,7 @@
       <p class="question-title">『<%= @question.title %>』</p>
      <p class="question-text"><%= @question.text %></p>
     <% if current_user.id == @question.user_id %>
-    <div class="post-edit"><%= link_to "編集する", root_path %>
+    <div class="post-edit"><%= link_to "編集する", edit_question_path(@question) %>
     </div>
     <% else %>
     <div class="post-edit"><%= link_to "回答する", root_path %>
