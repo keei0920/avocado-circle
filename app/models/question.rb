@@ -1,6 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_many :answers
 
   def was_attached?
     image.attached?
