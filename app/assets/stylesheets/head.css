@@ -7,6 +7,7 @@ background-color: #f3f3f3;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  padding: 15px 20px 0 25px;
   background-color: #ffffff;
 }
 
@@ -81,12 +82,12 @@ nav {
 
 .post-btn {
   text-decoration: none;
-  color: #ffffff;
+  color: #4C3C35;
   font-weight: bold;
-  border: 2px solid #E0EDDF;
+  border: 2px solid #768655;
   padding: 10px;
   border-radius: 10px;
-  background-color: #117238;
+  background-color: #FAE995;
 }
 
 .burger {
@@ -173,6 +174,9 @@ nav {
 
  /* レスポンシブ （スマホ）*/
  @media screen and (max-width: 450px) {
+  .header {
+    padding: 10px 0 0 10px;
+  }
   .logo {
     font-size: 17px;
   }

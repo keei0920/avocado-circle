@@ -19,6 +19,16 @@
   justify-content: space-around;
 }
 
+.avocado-contents {
+  padding: 10px;
+  width: 280px;
+  background-color: #FAE995;
+  border-radius: 10px;
+  border: 5px solid #768655;
+  color: #4C3C35;
+}
+
+
 .user-name {
   font-size: 30px;
   font-weight: bold;
@@ -26,6 +36,10 @@
 
 .user-acount {
   text-align: center;
+}
+
+.user-purpose-image {
+  margin-top: 5px;
 }
 
 .user-detail {
@@ -66,7 +80,10 @@
   border: 3px solid black;
   border-radius: 5px;
   height: 50px;
-  width: 100%;
+  width: 80%;
+  text-align: center;
+  margin-left: 25px;
+  background-color: #ffffff;
 }
 
 .sub-contents {
