@@ -9,7 +9,11 @@
     <div class="posts-content">
       <div class="post-profiele">
         <% if @question.user.purpose_id == 2 %>
-        <div class="user-logo"><%= image_tag 'Frame 1.png', size: '30x30', class:"logo-image" %>
+        <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
+        </div>
+        <% end %>
+        <% if @question.user.purpose_id == 3 %>
+        <div class="user-logo"><%= image_tag 'Frame3.png', size: '30x30', class:"logo-image" %>
         </div>
         <% end %>
         <p class="post-username"><%= link_to @question.user.nickname,user_path(@question.user) %></p>

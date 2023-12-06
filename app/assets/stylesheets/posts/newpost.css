@@ -1,3 +1,5 @@
+/* newquestion.cssと共有 */
+
 .post-body {
   padding-bottom: 100px;
 }
@@ -70,13 +72,16 @@
 }
 
 .post-submit {
-  color: #ffffff;
   background: transparent;
   border: none;
   outline: none;
   box-shadow: none;
   display: block;
   margin: auto;
+}
+
+.post-btn a{
+  color: #4C3C35;
 }
 
 /* レスポンシブ （スマホ）*/
