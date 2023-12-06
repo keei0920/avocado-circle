@@ -149,8 +149,8 @@ nav {
   .nav-links {
     position: fixed;
     right: 0;
-    height: 88vh;
-    top: 12vh;
+    height: 76vh;
+    top: 24vh;
     background-color: #ffffff;
     flex-direction: column;
     justify-content: flex-start;

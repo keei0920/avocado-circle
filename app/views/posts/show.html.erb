@@ -11,7 +11,11 @@
     <div class="posts-content">
       <div class="post-profiele">
         <% if @post.user.purpose_id == 2 %>
-        <div class="user-logo"><%= image_tag 'Frame 1.png', size: '30x30', class:"logo-image" %>
+        <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
+        </div>
+        <% end %>
+         <% if @post.user.purpose_id == 3 %>
+        <div class="user-logo"><%= image_tag 'Frame3.png', size: '30x30', class:"logo-image" %>
         </div>
         <% end %>
         <p class="post-username"><%= @post.user.nickname %></p>
