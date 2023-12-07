@@ -25,12 +25,12 @@
         <div class="posts-box">
         <%= link_to (post_path(post)) do %>
           <div class="post-details">
-            <p class="post-date">記録日：<%= post.date %></p>
-            <p class="post-condition">状態：<%= post.condition.name %></p>
+            <p class="post-date">【記録日】<%= post.date %></p>
+            <p class="post-condition">【状態】<%= post.condition.name %></p>
           </div>
         
           <% if post.image.attached? %>
-          <p class="post-image"><%= image_tag post.image.variant(resize: '150x150') %></p>
+          <p class="post-image"><%= image_tag post.image.variant(resize: '300x300') %></p>
           <% end %>
           <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
           <% end %>
@@ -63,12 +63,12 @@
         <div class="posts-box">
         <%= link_to (post_path(post)) do %>
           <div class="post-details">
-            <p class="post-date">記録日：<%= post.date %></p>
-            <p class="post-condition">状態：<%= post.condition.name %></p>
+            <p class="post-date">【記録日】<%= post.date %></p>
+            <p class="post-condition">【状態】<%= post.condition.name %></p>
           </div>
         
           <% if post.image.attached? %>
-          <p class="post-image"><%= image_tag post.image.variant(resize: '150x150') %></p>
+          <p class="post-image"><%= image_tag post.image.variant(resize: '300x300') %></p>
           <% end %>
           <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
           <% end %>

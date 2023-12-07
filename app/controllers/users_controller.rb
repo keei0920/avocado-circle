@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    return unless Avocado.exists?(user_id: @user.id)
-
-    @avocado = Avocado.find(@user.id)
+    if Avocado.exists?(user_id: @user.id)
+     @avocado = @user.avocado
+    end
   end
 
   def edit

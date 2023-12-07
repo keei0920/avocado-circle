@@ -1,8 +1,8 @@
  <div class="header-wrapper">
   <div class="header">
     <div class="main-title">
-    <%= image_tag 'food117.png', size: '40x40' %>
-    <h1 class="logo"><%= link_to 'アボカドサークル', root_path(current_user) %></h1>
+    <%= image_tag 'food117.png', size: '30x30' %>
+    <h1 class="logo"><%= link_to 'アボカドサークル', root_path %></h1>
     </div>
     <h5 class="sub-title">アボカドをみんなで育てよう</h5>
       <ul class="top-btn">
@@ -15,7 +15,7 @@
 
   <nav>
     <% if user_signed_in? %>
-    <%= link_to "マイページ", user_path(current_user), class:"mypage-btn"%>
+    <%= link_to "#{current_user.nickname}", user_path(current_user), class:"mypage-btn"%>
     <% else %>
     <%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %>
     <% end %>

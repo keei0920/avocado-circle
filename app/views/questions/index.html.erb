@@ -23,9 +23,9 @@
      <p class="question-title">『<%= question.title %>』</p>
      <p class="question-text"><%= truncate(question.text, length: 50) %></p>
        <% if question.image.attached? %>
-       <p class="post-image"><%= image_tag question.image.variant(resize: '150x150') %></p>
+       <p class="post-image"><%= image_tag question.image.variant(resize: '300x300') %></p>
        <% end %>
-       <% unless current_user.id == question.user.id %>
+       <% unless user_signed_in? && current_user.id == question.user.id %>
        <div class="post-edit"><%= link_to "回答する", root_path %>
        </div>
        <% end %>

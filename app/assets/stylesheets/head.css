@@ -6,7 +6,7 @@ background-color: #f3f3f3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 30px;
   padding: 15px 12px 0 25px;
   background-color: #ffffff;
 }
@@ -50,7 +50,7 @@ nav {
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Kaisei Decol', serif;
 }
 

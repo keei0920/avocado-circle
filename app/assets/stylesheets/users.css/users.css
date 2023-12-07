@@ -1,6 +1,6 @@
 /* 新規登録・ログイン */
 .join-wrapper {
-  width: 60%;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -16,16 +16,17 @@
 
 .registration-wrapper {
   border: 2px solid #EDF0F3;
-  padding: 40px;
+  padding: 20px;
   background-color: #fbfbfb;
   margin: 0 auto;
   border-radius: 0 0  10px 10px;
 }
 
 .form-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  padding-left: 33%;
+}
+
+.field {
 }
 
 .attentions {
@@ -63,18 +64,24 @@ input[type="password"] {
   height: 20px;
 }
 
-/* レスポンシブ （スマホ）*/
+/* レスポンシブ （Ipad）*/
 @media screen and (max-width: 768px) {
 .join-wrapper {
   width: 90%;
 }
 
 .form-content {
-  display: block;
-  text-align: center;
+  padding-left: 33%;
 }
 
 .join-wrapper h2 {
   font-size: 20px;
 }
 }
+
+/* レスポンシブ （Ipad）*/
+@media screen and (max-width: 450px) {
+  .form-content {
+    padding-left: 15%;
+  }
+  }

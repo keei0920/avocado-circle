@@ -1,5 +1,5 @@
 .posts-content {
-  width: 60%;
+  max-width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
   padding: 20px;
@@ -59,6 +59,17 @@
   margin-top: 100px;
   text-align: center;
   cursor: pointer;
+}
+
+.back-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.back-page a {
+  color: black;
 }
 
 /* レスポンシブ （タブレット）*/

@@ -29,10 +29,13 @@
       <p class="post-image"><%= image_tag @post.image.variant(resize: '150x150') %></p>
       <% end %>
       <p class="post-text"><%= @post.text %></p>
-    <% if current_user.id == @post.user_id %>
+    <% if user_signed_in? && current_user.id == @post.user_id %>
     <div class="post-edit"><%= link_to "編集する", edit_post_path(@post) %>
     </div>
     <% end %>
     </div>
+  </div>
+  <div class="back-page">
+    <%= link_to "一覧ページに戻る", root_path %>
   </div>
 </div>  
