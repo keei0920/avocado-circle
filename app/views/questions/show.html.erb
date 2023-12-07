@@ -29,7 +29,6 @@
     <div class="post-edit"><%= link_to "編集する", edit_question_path(@question) %>
     </div>
     <% else %>
-
     <div id="answers">
       <h4>＜コメント一覧＞</h4>
       <% @question.answers.each do |answer| %>

@@ -1,8 +1,9 @@
 class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
+    @question = Question.find(params[:question_id]) 
     if @answer.save
-      redirect_to question_path(params[:question_id])
+      AnswerChannel.broadcast_to @question, { answer: @answer, user: @answer.user } 
     end
   end
 
