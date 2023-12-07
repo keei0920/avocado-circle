@@ -20,6 +20,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answers = @question.answers.includes(:user)
+    @answer = Answer.new
   end
 
   def edit

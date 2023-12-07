@@ -3,7 +3,8 @@
      <%= render "/posts/head" %>
   </div>
 
-  <div class="question-header"><%= @question.user.nickname %>さんの質問</div>
+  <div class="question-header"><%= @question.user.nickname %>さんの質問
+  </div>
   
   <div class="posts-wrapper">
     <div class="posts-content">
@@ -28,9 +29,29 @@
     <div class="post-edit"><%= link_to "編集する", edit_question_path(@question) %>
     </div>
     <% else %>
-    <div class="post-edit"><%= link_to "回答する", root_path %>
+
+    <div id="answers">
+      <h4>＜コメント一覧＞</h4>
+      <% @question.answers.each do |answer| %>
+        <div class="answer">
+          <p class="user-info"><%= answer.user.nickname %>: </p>
+          <p><%= answer.text%></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="answer-form">
+      <% if user_signed_in? %>
+      <%= form_with model: [@question, @answer], id: "answer-form" do |f| %>
+      <%= f.text_area :text , class: "answer-text"%>
+      <%= f.submit "回答する", class: "answer-submit" %>
+      <% end %>
+      <% end %>
     </div>
     <% end %>
+    </div>
+    <div class="back-page">
+    <%= link_to "一覧ページに戻る", root_path %>
     </div>
   </div>
 </div>  

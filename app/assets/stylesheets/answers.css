@@ -1,0 +1,26 @@
+.answer-form{
+  display: flex;
+}
+
+.answer-text{
+  display: block;
+  margin-top: 20px;
+}
+
+.answer-submit{
+  display: block;
+  margin-top: 20px;
+}
+
+.answer{
+  display: flex;
+}
+
+.answer p{
+   margin: 0;
+}
+
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
