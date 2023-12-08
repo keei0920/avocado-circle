@@ -1,8 +1,8 @@
 .posts-content {
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0 20px 10px 20px;
   border-radius: 10px;
   border: 2px solid #eeeeee;
 }
@@ -35,6 +35,10 @@
 
 .post-condition {
   margin-left: 30px;
+}
+
+.post-image {
+  padding-left: 30px;
 }
 
 .post-edit {
@@ -75,7 +79,8 @@
 /* レスポンシブ （タブレット）*/
 @media screen and (max-width: 768px) {
   .posts-wrapper{
-   width: 100%;
+   margin: 0 auto;
+   margin-top: 20px;
   }
  
   .posts-content:first-child{

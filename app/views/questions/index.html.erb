@@ -25,10 +25,13 @@
        <% if question.image.attached? %>
        <p class="post-image"><%= image_tag question.image.variant(resize: '300x300') %></p>
        <% end %>
-       <% unless user_signed_in? && current_user.id == question.user.id %>
+       <% if user_signed_in? && current_user.id != question.user.id %>
        <div class="post-edit"><%= link_to "回答する", root_path %>
        </div>
        <% end %>
+       <div class="response-wrapper">
+          <p>コメント:<%= question.answers.count %></p>
+        </div>
    </div>
    <% end %>
   </div>

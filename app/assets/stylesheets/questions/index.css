@@ -11,3 +11,8 @@
   font-weight: bold;
 }
 
+.response-wrapper {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 14px;
+}
