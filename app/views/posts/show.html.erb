@@ -28,13 +28,33 @@
         <% end %>
       </div>
       <div class="post-details">
-      <p class="post-date">記録日：<%= @post.date %></p>
-      <p class="post-condition">状態：<%= @post.condition.name %></p>
+        <p class="post-date">記録日：<%= @post.date %></p>
+        <p class="post-condition">状態：<%= @post.condition.name %></p>
       </div>
       <% if @post.image.attached? %>
-      <p class="post-image"><%= image_tag @post.image.variant(resize: '150x150') %></p>
+       <p class="post-image"><%= image_tag @post.image.variant(resize: '150x150') %></p>
       <% end %>
       <p class="post-text"><%= @post.text %></p>
+      
+      <div id="comments">
+      <h4>＜コメント一覧＞</h4>
+        <% @post.comments.each do |comment| %>
+          <div class="comment">
+            <p class="user-info"><%= comment.user.nickname %>: </p>
+            <p><%= comment.text%></p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="comment-form">
+        <% if user_signed_in? %>
+          <%= form_with model: [@post, @comment], id: "comment-form" do |f| %>
+            <%= f.text_area :text , class: "comment-text"%>
+            <%= f.submit "コメントをする", class: "comment-submit" %>
+          <% end %>
+        <% end %>
+      </div>
+      
     </div>
   </div>
   <div class="back-page">
