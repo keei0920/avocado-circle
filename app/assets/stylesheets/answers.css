@@ -13,7 +13,28 @@
 }
 
 .answer{
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #E6F3FF;
+  border-radius: 10px;
+}
+
+.answer-first-line {
   display: flex;
+  justify-content: space-between;
+}
+
+.answer-delete {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.answer-delete:hover {
+  color: red;
 }
 
 .answer p{
