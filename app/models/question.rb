@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   def was_attached?
     image.attached?

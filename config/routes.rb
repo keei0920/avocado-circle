@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :avocados, only: [:new, :create, :edit, :update]
   resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] 
   resources :questions do
-    resources :answers, only: :create
+    resources :answers, only: [:create, :destroy]
   end
 end

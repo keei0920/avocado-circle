@@ -6,6 +6,12 @@ class AnswersController < ApplicationController
       AnswerChannel.broadcast_to @question, { answer: @answer, user: @answer.user } 
     end
   end
+  
+  def destroy
+    answer = Answer.find(params[:question_id])
+    answer.destroy
+    redirect_to question_path
+  end
 
   private
 

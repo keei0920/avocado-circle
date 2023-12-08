@@ -33,8 +33,13 @@
       <h4>＜コメント一覧＞</h4>
       <% @question.answers.each do |answer| %>
         <div class="answer">
-          <p class="user-info"><%= answer.user.nickname %>: </p>
-          <p><%= answer.text%></p>
+          <div class="answer-first-line">
+            <p class="user-info"><%= answer.user.nickname %></p>
+            <% if user_signed_in? && answer.user_id == current_user.id %>
+            <%= button_to '削除', question_answer_path(answer.id), method: :delete, class:"answer-delete" %>
+            <% end %>
+          </div>
+          <p class="answer-info"><%= answer.text%></p>
         </div>
       <% end %>
     </div>
@@ -46,6 +51,7 @@
       <%= f.submit "回答する", class: "answer-submit" %>
       <% end %>
       <% end %>
+      
     </div>
    </div>
     <div class="back-page">
