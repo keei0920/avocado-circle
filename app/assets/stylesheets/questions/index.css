@@ -13,6 +13,21 @@
 
 .response-wrapper {
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.answer-edit {
+  font-size: 15px;
+  padding: 5px;
+  background-color: #117238;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.answer-edit a{
+  color: #ffffff;
 }

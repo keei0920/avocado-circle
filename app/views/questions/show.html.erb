@@ -8,7 +8,8 @@
   
   <div class="posts-wrapper">
     <div class="posts-content">
-      <div class="post-profiele">
+      <div class="post-show-first-line">
+       <div class="post-profiele">
         <% if @question.user.purpose_id == 2 %>
         <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
         </div>
@@ -19,16 +20,17 @@
         <% end %>
         <p class="post-username"><%= link_to @question.user.nickname,user_path(@question.user) %></p>
         <p class="user-prefecture">[<%= @question.user.prefecture.name %>]</p>
+       </div>
+        <% if user_signed_in? && current_user.id == @question.user_id %>
+         <div class="post-edit"><%= link_to "編集", edit_question_path(@question) %>
+        </div>
+        <% end %>
       </div>
       <% if @question.image.attached? %>
       <p class="post-image"><%= image_tag @question.image.variant(resize: '150x150') %></p>
       <% end %>
       <p class="question-title">『<%= @question.title %>』</p>
      <p class="question-text"><%= @question.text %></p>
-     <% if user_signed_in? && current_user.id == @question.user_id %>
-      <div class="post-edit"><%= link_to "編集する", edit_question_path(@question) %>
-      </div>
-     <% end %>
       <div id="answers">
       <h4>＜コメント一覧＞</h4>
       <% @question.answers.each do |answer| %>

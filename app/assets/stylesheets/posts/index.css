@@ -27,6 +27,7 @@
 
 .post-profiele {
   display: flex;
+  height: 40px;
 }
 
 .post-details {
@@ -41,19 +42,21 @@
   padding-left: 30px;
 }
 
-.post-edit {
-  background-color: #117238;
-  margin: 0 auto;
-  margin-top: 40px;
-  width: 200px;
-  height: 40px;
+.post-show-first-line {
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.post-edit {
+  padding: 5px;
 }
 
 .post-edit a {
+  font-size: 15px;
+  padding: 5px;
+  background-color: #117238;
+  border-radius: 5px;
   display: block;
   color: #ffffff;
   text-decoration: none;

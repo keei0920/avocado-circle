@@ -9,17 +9,23 @@
   
   <div class="posts-wrapper">
     <div class="posts-content">
-      <div class="post-profiele">
-        <% if @post.user.purpose_id == 2 %>
-        <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
+      <div class="post-show-first-line">
+        <div class="post-profiele">
+          <% if @post.user.purpose_id == 2 %>
+          <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
+          </div>
+          <% end %>
+          <% if @post.user.purpose_id == 3 %>
+          <div class="user-logo"><%= image_tag 'Frame3.png', size: '30x30', class:"logo-image" %>
+          </div>
+          <% end %>
+          <p class="post-username"><%= @post.user.nickname %></p>
+          <p class="user-prefecture">[<%= @post.user.prefecture.name %>]</p>
         </div>
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+         <div class="post-edit"><%= link_to "編集", edit_post_path(@post) %>
+         </div>
         <% end %>
-         <% if @post.user.purpose_id == 3 %>
-        <div class="user-logo"><%= image_tag 'Frame3.png', size: '30x30', class:"logo-image" %>
-        </div>
-        <% end %>
-        <p class="post-username"><%= @post.user.nickname %></p>
-        <p class="user-prefecture">[<%= @post.user.prefecture.name %>]</p>
       </div>
       <div class="post-details">
       <p class="post-date">記録日：<%= @post.date %></p>
@@ -29,10 +35,6 @@
       <p class="post-image"><%= image_tag @post.image.variant(resize: '150x150') %></p>
       <% end %>
       <p class="post-text"><%= @post.text %></p>
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-    <div class="post-edit"><%= link_to "編集する", edit_post_path(@post) %>
-    </div>
-    <% end %>
     </div>
   </div>
   <div class="back-page">
