@@ -1,10 +1,12 @@
  <div class="header-wrapper">
   <div class="header">
+   <div class="titles-wrapper">
     <div class="main-title">
     <%= image_tag 'food117.png', size: '30x30' %>
     <h1 class="logo"><%= link_to 'アボカドサークル', root_path %></h1>
     </div>
     <h5 class="sub-title">アボカドをみんなで育てよう</h5>
+   </div>
       <ul class="top-btn">
       <% if user_signed_in? %>
       <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-text" %></li>

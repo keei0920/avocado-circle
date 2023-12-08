@@ -2,6 +2,10 @@ body {
 background-color: #f3f3f3;
 }
 
+.wrapper {
+  max-width: 100%;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,6 +13,11 @@ background-color: #f3f3f3;
   height: 30px;
   padding: 15px 12px 0 25px;
   background-color: #ffffff;
+}
+
+.titles-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .main-title {
@@ -34,8 +43,8 @@ background-color: #f3f3f3;
 }
 
 .sub-title {
+  padding-left: 30px;
   height: 10px;
-  display: none;
 }
 
 nav {
@@ -135,22 +144,28 @@ nav {
   .header-wrapper {
     overflow: hidden;
   }
+
+  .top-btn {
+    padding-right: 0px;
+  }
+
   .btn-text {
-    margin-right: 50px;
+    font-size: 15px;
   }
 
   .logo {
     font-size: 20px;
   }
-  
-  .btn-text {
-    font-size: 15px;
+
+  .sub-title {
+    display: none;
   }
+  
   .nav-links {
     position: fixed;
     right: 0;
-    height: 76vh;
-    top: 24vh;
+    height: 80vh;
+    top: 20vh;
     background-color: #ffffff;
     flex-direction: column;
     justify-content: flex-start;
@@ -183,5 +198,4 @@ nav {
   .btn-text {
     font-size: 10px;
   }
-
  }
