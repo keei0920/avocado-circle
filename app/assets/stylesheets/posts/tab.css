@@ -14,7 +14,8 @@
   border-radius: 5px 5px 0 0;
   background-color: #FAE995;
   color: #4C3C35;
-  border: 1px solid #768655;
+  font-weight: bold;
+  border: 2px solid #768655;
   font-size: .9em;
   text-align: center;
   cursor: pointer;

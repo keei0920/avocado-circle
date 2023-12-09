@@ -1,5 +1,5 @@
 body {
-background-color: #f3f3f3;
+  background-color: #F3f3f3;
 }
 
 .wrapper {
@@ -40,6 +40,7 @@ background-color: #f3f3f3;
   text-decoration: none;
   color: black;
   font-weight: bold;
+  border-bottom: 2px solid black;
 }
 
 .sub-title {
@@ -109,30 +110,6 @@ nav {
   height: 3px;
   background-color: black;
   margin: 5px;
-}
-
-/* メイン */
-.main {
-  width: 100%; 
-  background-color: #fbfbfb;
-}
-
-.main-header {
-  height: 53px;
-  border: 2px solid #e0e0e0;
-  display: flex;
-}
-
-.left-tab {
-  width: 50%;
-  border-right: 2px solid #EDF0F3;
-  text-align: center;
-  background-color: #ffffff;
-}
-
-.right-tab {
-  width: 50%;
-  text-align: center;
 }
 
 .nav-active {

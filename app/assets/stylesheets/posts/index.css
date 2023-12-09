@@ -1,5 +1,5 @@
 .posts-content {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
   padding: 0 20px 10px 20px;
@@ -97,15 +97,6 @@
 
 /* レスポンシブ （スマホ）*/
 @media screen and (max-width: 450px) {
- .posts-wrapper{
-  width: 90%;
-  margin: 0 auto;
- }
- 
- .posts-content{
-  width: 80%;
- }
-
  .post-image {
   text-align: center;
  }
@@ -117,4 +108,8 @@
  .post-details { 
   font-size: 12px;
  }
+
+ .post-image {
+  padding-left: 0px;
+}
 }

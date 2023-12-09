@@ -36,6 +36,9 @@
           <% end %>
         <% end %>
         </div>
+        <div class="response-wrapper">
+          <p>コメント:<%= post.comments.count %>件</p>
+        </div>
       </div>
       <% end %>
     </div>
@@ -73,6 +76,9 @@
           <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
           <% end %>
         <% end %>
+        </div>
+        <div class="response-wrapper">
+          <p>コメント:<%= post.comments.count %>件</p>
         </div>
       </div>
       <% end %>
