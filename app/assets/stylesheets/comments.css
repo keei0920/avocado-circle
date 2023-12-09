@@ -1,3 +1,12 @@
+.response-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.response-wrapper p {
+  margin-right: 50px;
+}
+
 .comment-form{
   display: flex;
 }

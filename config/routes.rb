@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :avocados, only: [:new, :create, :edit, :update]
   resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :comments,  only: [:create, :destroy]
+    resource :likes , only: [:create, :destroy]
   end
   resources :questions do
     resources :answers, only: [:create, :destroy]
