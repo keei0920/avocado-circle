@@ -20,6 +20,7 @@
 - has_many :questions
 - has_many :answers
 - has_many :answer_comments
+- has_many :likes
 
 
 ## avocados テーブル
