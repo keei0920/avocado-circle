@@ -14,14 +14,8 @@
         <%= render partial: "post", locals: {post: post} %>
         <div class="response-wrapper">
           <p>コメント:<%= post.comments.count %>件</p>
-          <div class="like-content", id="like-btn<%= post.id %>">
-            <% if user_signed_in? && post.liked_by?(current_user)%>
-              <%=button_to "いいね済", post_likes_path(post.id), method: :delete, class: "post_likes" %>
-            <% else %>
-              <%=button_to "いいね", post_likes_path(post.id), method: :post, class: "post_likes" %>
-            <% end %>
-            <p><%= post.likes.count %></p>
-          </div>
+
+          <%= render partial: "likes/like", locals: {post: post} %>
         </div>
       </div>
       <% end %>
