@@ -1,0 +1,25 @@
+<div class="post-profiele">
+  <% if post.user.purpose_id == 2 %>
+    <div class="user-logo"><%= image_tag 'Frame2.png', size: '30x30', class:"logo-image" %>
+    </div>
+  <% elsif post.user.purpose_id == 3 %>
+    <div class="user-logo"><%= image_tag 'Frame3.png', size: '25x25', class:"logo-image" %>
+    </div>
+  <% end %>
+  <p class="post-username"><%= link_to post.user.nickname,user_path(post.user) %></p>
+  <p class="user-prefecture">[<%= post.user.prefecture.name %>]</p>
+</div>
+<div class="posts-box">
+  <%= link_to (post_path(post)) do %>
+    <div class="post-details">
+      <p class="post-date">【記録日】<%= post.date %></p>
+      <p class="post-condition">【状態】<%= post.condition.name %></p>
+    </div>
+  
+    <% if post.image.attached? %>
+     <p class="post-image"><%= image_tag post.image.variant(resize: '300x300') %></p>
+    <% end %>
+     <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
+    <% end %>
+  <% end %>
+</div>
