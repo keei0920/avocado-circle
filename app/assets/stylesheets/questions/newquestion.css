@@ -1,4 +1,14 @@
 /* 親はnewpost.css */
+.solution-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.check-box {
+  width: 20px;
+  margin-left: 5px;
+}
 
 .top-contents {
   margin-top: 30px;
