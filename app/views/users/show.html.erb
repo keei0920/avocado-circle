@@ -89,10 +89,68 @@
       </div>
     </div>
   </div>
-  <div class="sub-contents">
-    <%= link_to "投稿", root_path, class:"sub-content" %>
-    <%= link_to "いいね", root_path, class:"sub-content" %>
-    <%= link_to "質問", root_path, class:"sub-content" %>
-    <%= link_to "回答", root_path, class:"sub-content" %>
+</div>
+  <div class="post-index-tab">
+    <label>
+      <input type="radio" name="post-index-tab" checked>
+      投稿
+    </label>
+  <div>
+    <div class="posts-wrapper">
+      <% @posts.where(user_id: @user.id).each do |post| %>
+      <div class="posts-content">
+        <%= render partial: "posts/post", locals: {post: post} %>
+        <div class="response-wrapper">
+          <p>コメント:<%= post.comments.count %>件</p>
+          <div class="like-content", id="like-btn<%= post.id %>">
+            <p>いいね <%= post.likes.count %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
+  <label>
+    <input type="radio" name="post-index-tab">
+    質問
+  </label>
+    <div class="posts-wrapper">
+      <% @questions.each do |question| %>
+        <%= render partial: "questions/question", locals: { question: question } %>
+      <% end %>
+    </div>
+  <label>
+    <input type="radio" name="post-index-tab">
+    いいねした投稿
+  </label>
+    <div>
+      <div class="posts-wrapper">
+      <% @user.likes.each do |like| %>
+      <% post = like.post %>
+        <% if post.present? %>
+          <div class="posts-content">
+            <%= render partial: "posts/post", locals: {post: post} %>
+            <div class="response-wrapper">
+              <p>コメント:<%= post.comments.count %>件</p>
+              <div class="like-content", id="like-btn<%= post.id %>">
+                <p>いいね <%= post.likes.count %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  <label>
+    <input type="radio" name="post-index-tab">
+    回答した投稿
+  </label>
+     <div class="posts-wrapper">
+      <% @user.answers.each do |answer| %>
+      <% question = answer.question %>
+      <% if question.present? %>
+        <%= render partial: "questions/question", locals: { question: question } %>
+      <% end %>
+      <% end %>
+    </div>
 </div>

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    @posts = @user.posts
+    @questions = @user.questions
     if Avocado.exists?(user_id: @user.id)
      @avocado = @user.avocado
     end
