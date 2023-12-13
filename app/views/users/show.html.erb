@@ -57,7 +57,7 @@
       <% if Avocado.exists?(user_id: @user.id)  %>
       <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
       </div>
-       <% if @avocado.birth_day.present? %>
+       <% if @avocado.present? && @avocado.birth_day.present? %>
        <p class="start-date"><%= "栽培開始: #{@avocado.birth_day} (#{(Time.now.to_date - @avocado.birth_day.to_date + 1).to_i}日目)" %></p>
        <% else %>
        <p class="start-date">栽培開始: 未登録</p>
@@ -81,7 +81,7 @@
         </div>
       <% end %>
       <div class="guides">
-        <% if @avocado.birth_day.present? %>
+        <% if @avocado.present? && @avocado.birth_day.present? %>
         <%= render partial: 'guide', locals: {avocado: @avocado} %>
         <% else %>
         <p>アボカドの情報を登録してね！</p>
