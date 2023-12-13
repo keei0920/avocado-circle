@@ -1,0 +1,16 @@
+<% if (Time.now.to_date - avocado.birth_day.to_date + 1).to_i <= 50 %>
+<% words = [
+  "これからが楽しみだね！",
+  "困った時は質問しよう！",
+  "この時期寒さは大敵だよ！"
+  ] %>
+<p><%= words.sample %></p>
+
+<% elsif (Time.now.to_date - avocado.birth_day.to_date + 1).to_i > 50 && (Time.now.to_date - avocado.birth_day.to_date + 1).to_i <= 10000 %>
+<% words = [
+  "困ってる人がいたら助けよう！",
+  "困った時は質問しよう！",
+  "水やりのし忘れはないかな？"
+  ] %>
+<p><%= words.sample %></p>
+<% end %>

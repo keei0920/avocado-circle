@@ -81,7 +81,11 @@
         </div>
       <% end %>
       <div class="guides">
-        <p>ここにガイドを入れるよ</p>
+        <% if @avocado.birth_day.present? %>
+        <%= render partial: 'guide', locals: {avocado: @avocado} %>
+        <% else %>
+        <p>アボカドの情報を登録してね！</p>
+        <% end %>
       </div>
     </div>
   </div>
