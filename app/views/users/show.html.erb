@@ -47,7 +47,7 @@
       <% unless Avocado.exists?(user_id: @user.id) %>
       <div class="avocado-name"><%= "#{@user.nickname}さんのアボカド" %>
       </div>
-        <p class="start-date">栽培開始日 : 未登録</p>
+        <p class="start-date">栽培開始: 未登録</p>
         <div class="avocado-detail">
           <p>最後の水やり: 未登録</p> 
           <p>最後の肥料： 未登録</p> 
@@ -58,9 +58,9 @@
       <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
       </div>
        <% if @avocado.birth_day.present? %>
-       <p class="start-date"><%= "栽培開始日 : #{@avocado.birth_day}" %></p>
+       <p class="start-date"><%= "栽培開始: #{@avocado.birth_day} (#{(Time.now.to_date - @avocado.birth_day.to_date + 1).to_i}日目)" %></p>
        <% else %>
-       <p class="start-date">栽培開始日 : 未登録</p>
+       <p class="start-date">栽培開始: 未登録</p>
        <% end %>
       <div class="avocado-detail">
         <% if @avocado.watering.present? %>
