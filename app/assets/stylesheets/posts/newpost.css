@@ -71,6 +71,11 @@
   align-items: center;
 }
 
+.preview-size{
+  height: 100px;
+  width: auto;
+}
+
 .post-submit {
   background: transparent;
   border: none;
