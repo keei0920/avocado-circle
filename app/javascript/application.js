@@ -4,3 +4,4 @@ Turbo.session.drive = false
 import "controllers"
 import "menu"
 import "channels"
+import "preview"
