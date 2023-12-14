@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to root_path
+      redirect_to questions_path
     else 
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
   def edit
     unless current_user.id == @question.user_id
-      redirect_to root_path
+      redirect_to question_path(@question)
     end
   end
 

@@ -101,7 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_065728) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "solution"
+    t.integer "solution", default: 0, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
