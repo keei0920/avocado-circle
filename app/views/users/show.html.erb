@@ -146,10 +146,12 @@
     回答した投稿
   </label>
      <div class="posts-wrapper">
+      <% displayed_questions = Set.new %>
       <% @user.answers.each do |answer| %>
       <% question = answer.question %>
-      <% if question.present? %>
+      <% if question.present? && !displayed_questions.include?(question.id)%>
         <%= render partial: "questions/question", locals: { question: question } %>
+        <% displayed_questions.add(question.id) %>
       <% end %>
       <% end %>
     </div>
