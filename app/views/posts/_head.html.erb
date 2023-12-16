@@ -20,6 +20,7 @@
     <%= link_to "#{current_user.nickname}", user_path(current_user), class:"mypage-btn"%>
     <% else %>
     <%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %>
+    <%= button_to 'ゲストログイン', users_guest_sign_in_path, data:{turbo_method: :post}, class: "mypage-btn" %>
     <% end %>
         <ul class="nav-links">
           <li class="menu-list"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>

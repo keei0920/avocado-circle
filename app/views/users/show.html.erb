@@ -3,8 +3,10 @@
 <div class="mypage-wrapper">
   <% if user_signed_in? && current_user.id == @user.id %>
   <div class="edit-wrapper">
+    <% unless current_user.id == 2 %>
     <div class="edit-profilet"><%= link_to "プロフィール編集" , edit_user_path(@user), class: "edit-btn" %>
     </div>
+    <% end %>
     <% unless Avocado.exists?(user_id: @user.id) %>
     <div class="edit-avocado"><%= link_to "アボカドの登録" ,  new_avocado_path(@avocado), class: "edit-btn" %>
     </div>
