@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
-    @question = Question.find(params[:question_id]) 
-    if @answer.save
-      AnswerChannel.broadcast_to @question, { answer: @answer, user: @answer.user } 
-    end
+    @question = Question.find(params[:question_id])
+    return unless @answer.save
+
+    AnswerChannel.broadcast_to @question, { answer: @answer, user: @answer.user }
   end
-  
+
   def destroy
     answer = Answer.find(params[:question_id])
     answer.destroy

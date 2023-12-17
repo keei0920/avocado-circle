@@ -16,9 +16,9 @@ class AvocadosController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @avocado.user_id
-      redirect_to root_path
-    end
+    return if current_user.id == @avocado.user_id
+
+    redirect_to root_path
   end
 
   def update
