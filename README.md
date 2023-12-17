@@ -14,7 +14,7 @@
 ## 開発環境
 ・フロントエンド：JavaScript  
 ・バックエンド：Ruby(3.2.0), Rails(7.0.8)  
-・インフラ：render
+・インフラ：render, AWS(S3)
 
 ## 実装機能
 [![Image from Gyazo](https://i.gyazo.com/fc4fde4e46289295f5b83dd5ec3d92cb.png)](https://gyazo.com/fc4fde4e46289295f5b83dd5ec3d92cb)
