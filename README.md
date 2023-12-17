@@ -11,6 +11,11 @@
 また、義母がアボカドの栽培をする序盤の段階で挫折してしまったという話を聞きました。アボカドの栽培は手軽に始められる分、挫折するのも多くいるのではないかという仮説を立てました。  
 以上を踏まえ、アボカドを育てている人、これから育てる人たちが、適切な管理や情報交換ができ、挫折せずにより栽培を長く楽しんでもらえるアプリケーションを開発したいと考えました。  
 
+## 開発環境
+・フロントエンド：JavaScript  
+・バックエンド：Ruby(3.2.0), Rails(7.0.8)  
+・インフラ：render
+
 ## 実装機能
 [![Image from Gyazo](https://i.gyazo.com/fc4fde4e46289295f5b83dd5ec3d92cb.png)](https://gyazo.com/fc4fde4e46289295f5b83dd5ec3d92cb)
 
@@ -22,11 +27,6 @@
 
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/2b2c9e1c140349bf49fee564db0c9637.png)](https://gyazo.com/2b2c9e1c140349bf49fee564db0c9637)
-
-## 開発環境
-・フロントエンド：JavaScript  
-・バックエンド：Ruby(3.2.0), Rails(7.0.8)  
-・インフラ：render
 
 ## 利用方法
 ぜひゲストログインの上ご利用ください。
