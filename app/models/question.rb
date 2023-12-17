@@ -6,7 +6,7 @@ class Question < ApplicationRecord
   def was_attached?
     image.attached?
   end
-  
+
   validates :title, presence: true
   validates :text, presence: true, unless: :was_attached?
 end

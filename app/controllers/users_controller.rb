@@ -5,15 +5,15 @@ class UsersController < ApplicationController
   def show
     @posts = @user.posts
     @questions = @user.questions
-    if Avocado.exists?(user_id: @user.id)
-     @avocado = @user.avocado
-    end
+    return unless Avocado.exists?(user_id: @user.id)
+
+    @avocado = @user.avocado
   end
 
   def edit
-    unless current_user.id == @user.id
-      redirect_to root_path
-    end
+    return if current_user.id == @user.id
+
+    redirect_to root_path
   end
 
   def update

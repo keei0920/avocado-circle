@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       redirect_to questions_path
-    else 
+    else
       render :new, status: :unprocessable_entity
     end
   end
@@ -25,25 +25,25 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @question.user_id
-      redirect_to question_path(@question)
-    end
+    return if current_user.id == @question.user_id
+
+    redirect_to question_path(@question)
   end
 
   def update
     if @question.update(question_params)
-     redirect_to questions_path
-   else
-     render :edit, status: :unprocessable_entity
-   end
+      redirect_to questions_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-   if @question.destroy
-     redirect_to root_path
-   else
-     redirect_to questions_path
-   end
+    if @question.destroy
+      redirect_to root_path
+    else
+      redirect_to questions_path
+    end
   end
 
   private

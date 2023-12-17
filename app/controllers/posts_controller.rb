@@ -19,29 +19,27 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments.includes(:user) 
+    @comments = @post.comments.includes(:user)
     @comment = Comment.new
   end
 
   def edit
-    unless current_user.id == @post.user_id
-      redirect_to root_path
-    end
+    return if current_user.id == @post.user_id
+
+    redirect_to root_path
   end
 
   def update
     if @post.update(post_params)
       redirect_to root_path
-   else
-     render :edit, status: :unprocessable_entity
-   end
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    if current_user.id == @post.user_id
-      @post.destroy
-   end
-   redirect_to root_path
+    @post.destroy if current_user.id == @post.user_id
+    redirect_to root_path
   end
 
   private
