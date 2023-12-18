@@ -9,6 +9,10 @@
       <%= form_with model: @question, local: true do |f| %>
        <% render 'shared/error', model: f.object %>
       <div class="top-contents">
+        <div class="solution-content">
+          <%= f.label "解決済" %>
+          <%= f.check_box(:solution, {class:"check-box", checked_value: 1 , unchecked_value: 0 }) %>
+         </div>
         <div class="title-content">
           <div class="title-form"> 
             <% f.label :title %>
