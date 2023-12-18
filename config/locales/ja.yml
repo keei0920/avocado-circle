@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        date: 日付
+        condition_id: 状態
