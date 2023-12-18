@@ -8,5 +8,6 @@ class Question < ApplicationRecord
   end
 
   validates :title, presence: true
+  validates :solution, presence: true
   validates :text, presence: true, unless: :was_attached?
 end
