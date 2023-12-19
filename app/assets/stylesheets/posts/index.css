@@ -28,6 +28,11 @@
 .post-profiele {
   display: flex;
   height: 40px;
+  align-items: center;
+}
+
+.post-time {
+  margin-left: 15px;
 }
 
 .post-details {

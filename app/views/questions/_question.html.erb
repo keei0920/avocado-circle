@@ -9,6 +9,17 @@
       <% end %>
         <p class="post-username"><%= link_to question.user.nickname,user_path(question.user) %></p>
         <p class="user-prefecture">[<%= question.user.prefecture.name %>]</p>
+        <div class="post-time">
+        <% if (Time.now - question.created_at) <= 60 * 60 %>
+          <%=((Time.now - question.created_at) / 60).to_i.to_s + "分前" %>
+        <% elsif (Time.now - question.created_at) <= 60 * 60 * 24 %>
+          <%=((Time.now - question.created_at) / 3600).to_i.to_s + "時間前" %>
+        <% elsif (Date.today - question.created_at.to_date) <= 30 %>
+          <%= (Date.today - question.created_at.to_date).to_i.to_s + "日前" %>
+        <% else %>
+          <%= question.created_at.strftime('%Y-%m-%d') %> 
+        <% end %>
+        </div>
     </div>
 
     <%= link_to question_path(question) do %>

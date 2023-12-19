@@ -8,4 +8,8 @@ ja:
         text: テキスト
         title: タイトル
       avocado:
-        name: 名前
+        name: 
+      time:
+        formats:
+          default: "%Y/%m/%d %H:%M:%S"
+          short: "%m/%d %H:%M"
