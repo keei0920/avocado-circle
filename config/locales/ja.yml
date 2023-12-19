@@ -4,3 +4,8 @@ ja:
       post:
         date: 日付
         condition_id: 状態
+      question: 
+        text: テキスト
+        title: タイトル
+      avocado:
+        name: 名前
