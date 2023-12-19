@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @posts = @user.posts
-    @questions = @user.questions
+    @posts = Post.includes(:user).order('created_at DESC')
+    @questions = Question.includes(:user).order('created_at DESC')
     return unless Avocado.exists?(user_id: @user.id)
 
     @avocado = @user.avocado

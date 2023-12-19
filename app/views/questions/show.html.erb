@@ -37,6 +37,7 @@
         <div class="answer">
           <div class="answer-first-line">
             <p class="user-info"><%= link_to answer.user.nickname,user_path(answer.user) %></p>
+              <%= render partial: "shared/time", locals: { question: answer } %>
             <% if user_signed_in? && answer.user_id == current_user.id %>
             <%= button_to '削除', question_answer_path(answer.id), method: :delete, class:"answer-delete" %>
             <% end %>
