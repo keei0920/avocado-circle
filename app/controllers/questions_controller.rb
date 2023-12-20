@@ -40,9 +40,9 @@ class QuestionsController < ApplicationController
 
   def destroy
     if @question.destroy
-      redirect_to root_path
-    else
       redirect_to questions_path
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

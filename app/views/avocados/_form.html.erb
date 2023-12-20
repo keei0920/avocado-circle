@@ -1,0 +1,46 @@
+<%= form_with model: @avocado, local: true do |f| %>
+  <%= render 'shared/error', model: f.object %>
+  
+    <div class="form-content">
+      <p class="field-title">アボカドの名前</p>
+      <div class="field"> 
+      <%= f.text_field :name, placeholder:"アボカド" %>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <p class="field-title">栽培開始日（任意）</p>
+      <div class="field"> 
+      <% f.label :birth_day %>
+      <%= f.date_field(:birth_day) %>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <p class="field-title">最後の水やり（任意）</p>
+      <div class="field"> 
+        <% f.label :watering %>
+        <%= f.date_field(:watering) %>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <p class="field-title">最後の植替え（任意）</p>
+      <div class="field"> 
+        <% f.label :transplant %>
+        <%= f.date_field(:transplant) %>
+      </div>
+    </div>
+    
+    <div class="form-content">
+      <p class="field-title">最後の肥料（任意）</p>
+      <div class="field">
+        <% f.label :fertilizer %>
+        <%= f.date_field(:fertilizer) %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+ <% end %>
