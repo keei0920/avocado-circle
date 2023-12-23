@@ -9,7 +9,7 @@
    </div>
       <ul class="top-btn">
       <% if user_signed_in? %>
-      <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-text" %></li>
+      <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "log-out" %></li>
       <% else %>
       <li><%= link_to "新規登録", new_user_registration_path, class: "btn-text"%></li>
       <% end %>
@@ -20,21 +20,18 @@
     <% if user_signed_in? %>
     <%= link_to "#{current_user.nickname}", user_path(current_user), class:"mypage-btn"%>
     <% else %>
-    <div class="sign-in">
-    <%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %>
-    <%= button_to 'ゲストログイン', users_guest_sign_in_path, data:{turbo_method: :post}, class: "guest-btn" %>
-    </div>
+    <ul class="signin-button">
+    <li><%= link_to "ログイン", new_user_session_path, class: "mypage-btn" %></li>
+    <li><%= button_to 'ゲストログイン', users_guest_sign_in_path, data:{turbo_method: :post}, class: "log-out" %></li>
+    </ul>
     <% end %>
         <ul class="nav-links">
-          <li class="menu-list", id="information"><%= image_tag 'bell.png', size: '20x20' %> お知らせ</li>
-          <li><%= image_tag 'question.png', size: '20x20' %> 
-            <%= link_to '質問する', new_question_path, class:"menu-list" %></li>
-          <li class="menu-list"><%= image_tag 'answer.png', size: '20x20' %> 
-            <%= link_to '質問をみる',questions_path, class:"menu-list" %></li>
-          <li class="menu-list", id="watching-record"><%= image_tag 'record.png', size: '20x20' %> 
-          <%= link_to '記録をみる', root_path, class:"menu-list" %></li>
+          <li class="menu-list", id="information">お知らせ</li>
+          <li><%= link_to '質問する', new_question_path, class:"menu-list" %></li>
+          <li class="menu-list"><%= link_to '質問をみる',questions_path, class:"menu-list" %></li>
+          <li class="menu-list", id="watching-record"><%= link_to '記録をみる', root_path, class:"menu-list" %></li>
+          <li class="menu-list"><%= link_to "投稿する", new_post_path, class:"menu-list" %></li>
         </ul>
-          <%= link_to "投稿する", new_post_path, class:"post-btn" %>
     <div class="burger">
       <div class="line1"></div>
       <div class="line2"></div>

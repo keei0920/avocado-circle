@@ -92,39 +92,41 @@
     </div>
   </div>
 </div>
-  <div class="post-index-tab">
+<div class="post-index-tab">
     <label>
       <input type="radio" name="post-index-tab" checked>
       投稿
     </label>
-  <div>
-    <div class="posts-wrapper">
-      <% @posts.where(user_id: @user.id).each do |post| %>
-      <div class="posts-content">
-        <%= render partial: "posts/post", locals: {post: post} %>
-        <div class="response-wrapper">
-          <p>コメント:<%= post.comments.count %>件</p>
-          <div class="like-content", id="like-btn<%= post.id %>">
-            <p>いいね <%= post.likes.count %></p>
+    <div>
+      <div class="posts-wrapper">
+        <% @posts.where(user_id: @user.id).each do |post| %>
+        <div class="posts-content">
+          <%= render partial: "posts/post", locals: {post: post} %>
+          <div class="response-wrapper">
+            <p>コメント:<%= post.comments.count %>件</p>
+            <div class="like-content", id="like-btn<%= post.id %>">
+              <p>いいね <%= post.likes.count %></p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-    </div>
-  </div>
-  <label>
-    <input type="radio" name="post-index-tab">
-    質問
-  </label>
-    <div class="posts-wrapper">
-      <% @questions.where(user_id: @user.id).each do |question| %>
-        <%= render partial: "questions/question", locals: { question: question } %>
       <% end %>
+      </div>
     </div>
-  <label>
-    <input type="radio" name="post-index-tab">
-    いいねした投稿
-  </label>
+    <label>
+      <input type="radio" name="post-index-tab">
+      質問
+    </label>
+    <div>
+      <div class="posts-wrapper">
+        <% @questions.where(user_id: @user.id).each do |question| %>
+          <%= render partial: "questions/question", locals: { question: question } %>
+        <% end %>
+      </div>
+    </div>
+    <label>
+      <input type="radio" name="post-index-tab">
+      いいね
+    </label>
     <div>
       <div class="posts-wrapper">
       <% @user.likes.each do |like| %>
@@ -143,18 +145,20 @@
       <% end %>
       </div>
     </div>
-  <label>
-    <input type="radio" name="post-index-tab">
-    回答した投稿
-  </label>
-     <div class="posts-wrapper">
-      <% displayed_questions = Set.new %>
-      <% @user.answers.each do |answer| %>
-      <% question = answer.question %>
-      <% if question.present? && !displayed_questions.include?(question.id)%>
-        <%= render partial: "questions/question", locals: { question: question } %>
-        <% displayed_questions.add(question.id) %>
-      <% end %>
-      <% end %>
+    <label id="answer-tab">
+      <input type="radio" name="post-index-tab">
+      回答
+    </label>
+    <div>
+      <div class="posts-wrapper">
+        <% displayed_questions = Set.new %>
+        <% @user.answers.each do |answer| %>
+        <% question = answer.question %>
+        <% if question.present? && !displayed_questions.include?(question.id)%>
+          <%= render partial: "questions/question", locals: { question: question } %>
+          <% displayed_questions.add(question.id) %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
 </div>
