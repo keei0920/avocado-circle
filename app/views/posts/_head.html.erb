@@ -27,9 +27,9 @@
     <% end %>
         <ul class="nav-links">
           <li class="menu-list", id="information">お知らせ</li>
-          <li><%= link_to '質問する', new_question_path, class:"menu-list" %></li>
           <li class="menu-list"><%= link_to '質問をみる',questions_path, class:"menu-list" %></li>
-          <li class="menu-list", id="watching-record"><%= link_to '記録をみる', root_path, class:"menu-list" %></li>
+          <li><%= link_to '質問する', new_question_path, class:"menu-list" %></li>
+          <li class="menu-list", id="watching-record"><%= link_to '投稿をみる', root_path, class:"menu-list" %></li>
           <li class="menu-list"><%= link_to "投稿する", new_post_path, class:"menu-list" %></li>
         </ul>
     <div class="burger">

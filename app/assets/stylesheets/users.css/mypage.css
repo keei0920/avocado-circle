@@ -99,6 +99,10 @@
   color: black;
 }
 
+.edit-header {
+  text-align: center;
+}
+
 /* レスポンシブ （タブレット）*/
 @media screen and (max-width: 768px) {
   .contents-wrapper {

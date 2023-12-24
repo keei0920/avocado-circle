@@ -52,7 +52,7 @@
       <div class="comment-form">
         <% if user_signed_in? %>
           <%= form_with model: [@post, @comment], id: "comment-form" do |f| %>
-            <%= f.text_area :text , class: "comment-text", size: '50 x 4'%>
+            <%= f.text_area :text , class: "comment-text-box" %>
             <%= f.submit "コメントをする", class: "comment-submit" %>
           <% end %>
         <% end %>
