@@ -15,7 +15,7 @@
         <div class="response-wrapper">
           <p>コメント:<%= post.comments.count %>件</p>
           <%= render partial: "likes/like", locals: {post: post} %>
-          <%= link_to 'コメントする', post_path(post), class:'comment-command' %>
+          <%= link_to 'コメントする', post_path(post) %>
         </div>
       </div>
       <% end %>
