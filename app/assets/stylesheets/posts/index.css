@@ -17,11 +17,12 @@
 }
 
 .logo-image {
-  padding-top: 10px;
+  margin-top: 5px;
+  padding-right: 5px;
 }
 
 .post-username {
-  margin-right: 10px;
+  padding-right: 5px;
   font-weight: bold;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .post-time {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .post-details {
@@ -107,7 +108,7 @@
   }
  
   .post-details { 
-   font-size: 12px;
+   font-size: 14px;
   }
  }
 
@@ -122,7 +123,7 @@
  }
 
  .post-details { 
-  font-size: 12px;
+  font-size: 14px;
  }
 
  .post-image {
