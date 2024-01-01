@@ -3,9 +3,9 @@ FactoryBot.define do
     title                { 'おすすめの〇〇について' }
     text                 { 'テストテストテスト' }
     solution             { 0 }
-    
+
     user
-    
+
     after(:build) do |message|
       message.image.attach(io: File.open('app/assets/images/logo.jpg'), filename: 'logo.jpg')
     end

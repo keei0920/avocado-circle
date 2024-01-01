@@ -19,18 +19,18 @@ RSpec.describe Question, type: :model do
     it 'タイトルの入力がないと投稿できない' do
       @question.title = nil
       @question.valid?
-      expect(@question.errors.full_messages).to include "タイトルを入力してください"
+      expect(@question.errors.full_messages).to include 'タイトルを入力してください'
     end
     it 'テキストの入力がないと投稿できない' do
       @question.text = nil
       @question.valid?
-      expect(@question.errors.full_messages).to include "テキストを入力してください"
+      expect(@question.errors.full_messages).to include 'テキストを入力してください'
     end
     it 'userが紐づいていないと投稿できない' do
       @question.user = nil
       @question.valid?
       binding.pry
-      expect(@question.errors.full_messages).to include "Userを入力してください"
+      expect(@question.errors.full_messages).to include 'Userを入力してください'
     end
   end
 end

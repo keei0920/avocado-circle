@@ -23,23 +23,23 @@ RSpec.describe Post, type: :model do
     it '記録日の入力がないと投稿できない' do
       @post.date = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include "日付を入力してください"
+      expect(@post.errors.full_messages).to include '日付を入力してください'
     end
     it '状態の入力がないと投稿できない' do
       @post.condition_id = 1
       @post.valid?
-      expect(@post.errors.full_messages).to include "状態を選択してください"
+      expect(@post.errors.full_messages).to include '状態を選択してください'
     end
     it 'テキストと画像が両方ともないと投稿できない' do
       @post.text = nil
       @post.image = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include "Textを入力してください"
+      expect(@post.errors.full_messages).to include 'Textを入力してください'
     end
     it 'userが紐づいていないと投稿できない' do
       @post.user = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include "Userを入力してください"
+      expect(@post.errors.full_messages).to include 'Userを入力してください'
     end
   end
 end

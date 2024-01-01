@@ -1,7 +1,5 @@
 <div class="wrapper">
-  <div class="side">
-    <%= render "head" %>
-  </div>
+  <%= render "head" %>
 
   <div class="post-index-tab">
     <label>
@@ -10,14 +8,14 @@
     </label>
     <div class="posts-wrapper">
       <% @posts.each do |post| %>
-      <div class="posts-content">
-        <%= render partial: "post", locals: {post: post} %>
-        <div class="response-wrapper">
-          <p>コメント:<%= post.comments.count %>件</p>
-          <%= render partial: "likes/like", locals: {post: post} %>
-          <%= link_to 'コメントする', post_path(post) %>
+        <div class="posts-content">
+          <%= render partial: "post", locals: {post: post} %>
+          <div class="response-wrapper">
+            <p>コメント:<%= post.comments.count %>件</p>
+            <%= render partial: "likes/like", locals: {post: post} %>
+            <%= link_to 'コメントする', post_path(post) %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
 

@@ -15,12 +15,12 @@ RSpec.describe Avocado, type: :model do
     it '名前の入力がないと登録できない' do
       @avocado.name = nil
       @avocado.valid?
-      expect(@avocado.errors.full_messages).to include "名前を入力してください"
+      expect(@avocado.errors.full_messages).to include '名前を入力してください'
     end
     it 'userが紐づいていないと投稿できない' do
       @avocado.user = nil
       @avocado.valid?
-      expect(@avocado.errors.full_messages).to include "Userを入力してください"
+      expect(@avocado.errors.full_messages).to include 'Userを入力してください'
     end
   end
 end

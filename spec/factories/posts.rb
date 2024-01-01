@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :post do
-    date                  { '2023-12-12' }
-    condition_id         { 2 }
-    text                  { 'テスト' }
-    
+    date { '2023-12-12' }
+    condition_id { 2 }
+    text { 'テスト' }
+
     user
 
     after(:build) do |message|
