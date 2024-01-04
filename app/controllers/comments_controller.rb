@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     return unless @comment.save
 
+    # endサーバーからクライアント側へデータを送ることを、broadcastと呼ぶ
     CommentChannel.broadcast_to @post, { comment: @comment, user: @comment.user }
   end
 

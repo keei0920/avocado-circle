@@ -33,7 +33,7 @@
       <p class="post-text"><%= @post.text %></p>
       
       <div id="comments">
-      <h4>＜コメント一覧＞</h4>
+        <h4>＜コメント一覧＞</h4>
         <% @post.comments.each do |comment| %>
           <div class="comment">
             <div class="comment-first-line">
@@ -45,7 +45,6 @@
             </div>
             <p><%= comment.text%></p>
           </div>
-
         <% end %>
       </div>
 
@@ -57,7 +56,7 @@
           <% end %>
         <% end %>
       </div>
-      
+
     </div>
   </div>
   <div class="back-page">

@@ -22,7 +22,7 @@
     <% if post.image.attached? %>
      <p class="post-image"><%= image_tag post.image.variant(resize: '300x300') %></p>
     <% end %>
-     <p class="post-text"><%= truncate(post.text, length: 30) do %></p>
+     <p class="post-text"><%= truncate(post.text, length: 30, omission: ".....続きを見る") do %></p>
     <% end %>
   <% end %>
 </div>

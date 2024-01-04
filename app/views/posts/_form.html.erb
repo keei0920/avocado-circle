@@ -1,6 +1,7 @@
 <%= form_with model: @post, local: true do |f| %>
 <%= render 'shared/error', model: f.object %>
   <div class="top-contents">
+
       <div class="date-content">
         <p class="date-title">記録日</p>
         <div class="date-form"> 
@@ -8,6 +9,7 @@
           <%= f.date_field(:date, class:"form-box") %>
         </div>
       </div>
+
       <div class="condition-content">
         <p class="condition-title">調子</p>
         <div class="condition-form"> 
@@ -31,8 +33,9 @@
         <%= f.file_field :image %>
       </div>
     </div>
-  <div class="post-btn">
-  <%= f.submit "投稿する", class:"post-submit" %>
-  </div>
+
+    <div class="post-btn">
+      <%= f.submit "投稿する", class:"post-submit" %>
+    </div>
   </div> 
 <% end %>
