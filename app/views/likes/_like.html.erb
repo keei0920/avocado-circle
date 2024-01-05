@@ -1,3 +1,4 @@
+<%# dom_idのpostは投稿オブジェクトを表し、:likeはsuffix（接尾辞）として指定 %>
 <%= turbo_frame_tag dom_id(post, :like), class:"like-content" do %>
   <% if user_signed_in? && post.liked_by?(current_user)%>
     <%=button_to (image_tag 'like.png', size:'15x15'), post_likes_path(post.id), method: :delete, class: "post-likes" %>

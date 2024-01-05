@@ -17,7 +17,7 @@
     <%= link_to question_path(question) do %>
     <div class="posts-box">
       <p class="question-title">『<%= question.title %>』</p>
-      <p class="question-text"><%= truncate(question.text, length: 50) %></p>
+      <p class="question-text"><%= truncate(question.text, length: 30, omission: ".....続きを見る") %></p>
         <% if question.image.attached? %>
           <p class="post-image"><%= image_tag question.image.variant(resize: '300x300') %></p>
         <% end %>

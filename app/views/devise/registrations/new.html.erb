@@ -1,15 +1,13 @@
 <div class="wrapper">
-  <div class="side">
-      <%= render "/posts/head" %>
-  </div>
+  <%= render "/posts/head" %>
   
   <div class="join-wrapper">
-  <h2 class ="title">新規登録（無料）</h2>
+    <h2 class ="title">新規登録（無料）</h2>
     <div class="registration-wrapper">
       
       <div class="registration-form">
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+          <%= render "devise/shared/error_messages", resource: resource %>
           
           <div class="form-content">
             <p class="field-title">ユーザーネーム</p>
@@ -53,12 +51,13 @@
             </div>
           </div>
 
-            <div class="actions">
-              <%= f.submit "登録する" %>
-            </div>
+          <div class="actions">
+            <%= f.submit "登録する" %>
+          </div>
         <% end %>
       </div>
     </div>
+
     <div class="login">
       <%= link_to "ログインはこちら", new_user_session_path, class: "btn" %>
     </div>

@@ -8,9 +8,10 @@ document.addEventListener('turbo:load', function(){
   if (!postForm) return null;
 
   // input要素を取得
-  const fileField = document.querySelector('input[type="file"][name="post[image]"]')
+  const fileFields = document.querySelectorAll('input[type="file"][name="post[image]"], input[type="file"][name="question[image]"]')
 
   // input要素で値の変化が起きた際に呼び出される関数
+  fileFields.forEach(fileField => {
   fileField.addEventListener('change', function(e){
     // 古いプレビューが存在する場合は削除する
     const alreadyPreview = document.querySelector('.preview');
@@ -37,5 +38,6 @@ document.addEventListener('turbo:load', function(){
     // appendChild()メソッドは、指定した親要素の中に要素を追加するメソッド
     previewWrapper.appendChild(previewImage);
     previewList.appendChild(previewWrapper);
+  });
   });
 });

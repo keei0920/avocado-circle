@@ -1,6 +1,8 @@
 <%= render "/posts/head" %>
 
 <div class="mypage-wrapper">
+
+  <%# 登録・編集コマンド %>
   <% if user_signed_in? && current_user.id == @user.id %>
   <div class="edit-wrapper">
     <% unless current_user.id == 2 %>
@@ -17,6 +19,8 @@
     <% end %>
   </div>
   <% end %>
+
+  <%# （左側）ユーザー情報 %>
   <div class="contents-wrapper">
     <div class ="user-contents">
       <div class="user-acount">
@@ -34,17 +38,10 @@
           <dd><%= @user.purpose.name %></dd>
           <dt>都道府県</dt> 
           <dd><%= @user.prefecture.name %></dd>
-          <dt>自己紹介</dt> 
-          <dd><%= truncate(@user.introduce, length: 50) do %>
-              <%= link_to '続きを読む', "#"  %>
-          </dd>
-          <% end %>
-          <% if @user.introduce = "" %>
-          <dd><%= 'まだ記入はありません' %></dd>
-          <% end %>
       </dl>
     </div>
 
+    <%# (右側)アボカド情報 %>
     <div class="avocado-contents">
       <% unless Avocado.exists?(user_id: @user.id) %>
       <div class="avocado-name"><%= "#{@user.nickname}さんのアボカド" %>
@@ -92,6 +89,8 @@
     </div>
   </div>
 </div>
+
+<%# ユーザーの投稿一覧 %>
 <div class="post-index-tab">
     <label>
       <input type="radio" name="post-index-tab" checked>

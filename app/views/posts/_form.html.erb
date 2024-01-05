@@ -1,7 +1,6 @@
 <%= form_with model: @post, local: true do |f| %>
 <%= render 'shared/error', model: f.object %>
-  <div class="top-contents">
-
+    <div class="top-contents">
       <div class="date-content">
         <p class="date-title">記録日</p>
         <div class="date-form"> 
@@ -37,5 +36,4 @@
     <div class="post-btn">
       <%= f.submit "投稿する", class:"post-submit" %>
     </div>
-  </div> 
 <% end %>
