@@ -1,6 +1,9 @@
 <div class="wrapper">
+
+  <%# メニュー %>
   <%= render "head" %>
 
+  <%# タブの左側 %>
   <div class="post-index-tab">
     <label>
       <input type="radio" name="post-index-tab" checked>
@@ -19,6 +22,7 @@
       <% end %>
     </div>
 
+    <%# タブの右側 %>
     <% if user_signed_in? && Post.exists?(user_id: current_user.id) %>
     <label>
       <input type="radio" name="post-index-tab">
