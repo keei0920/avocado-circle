@@ -1,4 +1,4 @@
-<% if (Time.now.to_date - avocado.birth_day.to_date + 1).to_i <= 50 %>
+<% if (Date.today - avocado.birth_day + 1).to_i <= 50 %>
   <% guide_words = [
     "これからが楽しみだね！",
     "困った時は質問しよう！",
@@ -6,7 +6,7 @@
     ] %>
   <p><%= guide_words.sample %></p>
 
-<% elsif (Time.now.to_date - avocado.birth_day.to_date + 1).to_i > 50 && (Time.now.to_date - avocado.birth_day.to_date + 1).to_i <= 10000 %>
+<% elsif (Date.today - avocado.birth_day + 1).to_i > 50 && (Date.today - avocado.birth_day + 1).to_i <= 10000 %>
   <% guide_words = [
     "困ってる人がいたら助けよう！",
     "困った時は質問しよう！",

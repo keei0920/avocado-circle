@@ -57,7 +57,8 @@
       <div class="avocado-name"><%= "#{@user.nickname}さんの#{@avocado.name}" %>
       </div>
        <% if @avocado.present? && @avocado.birth_day.present? %>
-       <p class="start-date"><%= "栽培開始: #{@avocado.birth_day} (#{(Time.now.to_date - @avocado.birth_day.to_date + 1).to_i}日目)" %></p>
+       <%# Date.today = 2024-01-12, to_iは、引算した結果を整数に変換するために記述  %>
+       <p class="start-date"><%= "栽培開始: #{@avocado.birth_day} (#{(Date.today - @avocado.birth_day + 1).to_i}日目)" %></p>
        <% else %>
        <p class="start-date">栽培開始: 未登録</p>
        <% end %>
